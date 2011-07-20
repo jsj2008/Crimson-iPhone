@@ -1,0 +1,166 @@
+// !$*UTF8*$!
+{
+	1D3623240D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 429}}";
+			sepNavSelRange = "{217, 0}";
+			sepNavVisRange = "{42, 858}";
+		};
+	};
+	1D3623250D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 2743}}";
+			sepNavSelRange = "{521, 0}";
+			sepNavVisRange = "{0, 698}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* HarvardCrimson-iPhone */ = {
+		activeExec = 0;
+		executables = (
+			E50AFF4D13D57B3200D9F6E6 /* HarvardCrimson-iPhone */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = E50AFF4D13D57B3200D9F6E6 /* HarvardCrimson-iPhone */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* HarvardCrimson-iPhone */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* HarvardCrimson-iPhone */,
+		);
+		codeSenseManager = E50AFF6513D57B5100D9F6E6 /* Code sense */;
+		executables = (
+			E50AFF4D13D57B3200D9F6E6 /* HarvardCrimson-iPhone */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					833,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 332861919;
+			PBXWorkspaceStateSaveDate = 332861919;
+		};
+		perUserProjectItems = {
+			E50AFF9A13D5810800D9F6E6 = E50AFF9A13D5810800D9F6E6 /* PBXTextBookmark */;
+			E50AFF9B13D5810800D9F6E6 = E50AFF9B13D5810800D9F6E6 /* PBXTextBookmark */;
+			E50AFF9C13D5810800D9F6E6 = E50AFF9C13D5810800D9F6E6 /* PBXTextBookmark */;
+		};
+		sourceControlManager = E50AFF6413D57B5100D9F6E6 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107310486CEB800E47090 /* HarvardCrimson_iPhone-Info.plist */ = {
+		uiCtxt = {
+			sepNavWindowFrame = "{{1295, 96}, {750, 800}}";
+		};
+	};
+	E50AFF4D13D57B3200D9F6E6 /* HarvardCrimson-iPhone */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "HarvardCrimson-iPhone";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	E50AFF6413D57B5100D9F6E6 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	E50AFF6513D57B5100D9F6E6 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	E50AFF9A13D5810800D9F6E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.h */;
+		name = "HarvardCrimson_iPhoneAppDelegate.h: 10";
+		rLen = 0;
+		rLoc = 217;
+		rType = 0;
+		vrLen = 858;
+		vrLoc = 42;
+	};
+	E50AFF9B13D5810800D9F6E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.m */;
+		name = "HarvardCrimson_iPhoneAppDelegate.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 661;
+		vrLoc = 0;
+	};
+	E50AFF9C13D5810800D9F6E6 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.m */;
+		name = "HarvardCrimson_iPhoneAppDelegate.m: 23";
+		rLen = 0;
+		rLoc = 521;
+		rType = 0;
+		vrLen = 1061;
+		vrLoc = 231;
+	};
+	E572BEF613D712A9009199BC /* FeedListViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 546}}";
+			sepNavSelRange = "{557, 0}";
+			sepNavVisRange = "{61, 968}";
+		};
+	};
+	E572BEF713D712A9009199BC /* FeedListViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 1573}}";
+			sepNavSelRange = "{3442, 0}";
+			sepNavVisRange = "{2462, 1117}";
+		};
+	};
+	E572BF0913D71F12009199BC /* dialogs.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1011, 388}}";
+			sepNavSelRange = "{971, 0}";
+			sepNavVisRange = "{0, 971}";
+		};
+	};
+}
