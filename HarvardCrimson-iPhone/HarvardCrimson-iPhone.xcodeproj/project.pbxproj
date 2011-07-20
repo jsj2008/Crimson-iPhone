@@ -21,6 +21,8 @@
 		E572BEF913D712A9009199BC /* FeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BEF713D712A9009199BC /* FeedListViewController.m */; };
 		E572BEFE13D715D9009199BC /* seal_background.png in Resources */ = {isa = PBXBuildFile; fileRef = E572BEFD13D715D9009199BC /* seal_background.png */; };
 		E572BF2713D7235C009199BC /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF2613D7235C009199BC /* NewsItem.m */; };
+		E572BF4613D7287F009199BC /* BaseItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF4513D7287F009199BC /* BaseItemTableViewCell.m */; };
+		E572BF5113D7295B009199BC /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF5013D7295B009199BC /* ArticleTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		E572BF0913D71F12009199BC /* dialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dialogs.h; sourceTree = "<group>"; };
 		E572BF2513D7235C009199BC /* NewsItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsItem.h; sourceTree = "<group>"; };
 		E572BF2613D7235C009199BC /* NewsItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsItem.m; sourceTree = "<group>"; };
+		E572BF4413D7287F009199BC /* BaseItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseItemTableViewCell.h; sourceTree = "<group>"; };
+		E572BF4513D7287F009199BC /* BaseItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseItemTableViewCell.m; sourceTree = "<group>"; };
+		E572BF4F13D7295B009199BC /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
+		E572BF5013D7295B009199BC /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				E572BF3E13D72736009199BC /* App Classes */,
-				E572BF3413D72620009199BC /* Controllers */,
 				E572BF2413D72332009199BC /* Models */,
+				E572BF4313D72839009199BC /* Views */,
+				E572BF3413D72620009199BC /* Controllers */,
 				E50AFF9213D57FF300D9F6E6 /* FlurryLib */,
 			);
 			path = Classes;
@@ -187,6 +194,33 @@
 			name = "App Classes";
 			sourceTree = "<group>";
 		};
+		E572BF4313D72839009199BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E572BF4813D7292F009199BC /* Tableview cells */,
+				E572BF4713D72921009199BC /* BaseTableView Cells */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E572BF4713D72921009199BC /* BaseTableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E572BF4413D7287F009199BC /* BaseItemTableViewCell.h */,
+				E572BF4513D7287F009199BC /* BaseItemTableViewCell.m */,
+			);
+			name = "BaseTableView Cells";
+			sourceTree = "<group>";
+		};
+		E572BF4813D7292F009199BC /* Tableview cells */ = {
+			isa = PBXGroup;
+			children = (
+				E572BF4F13D7295B009199BC /* ArticleTableViewCell.h */,
+				E572BF5013D7295B009199BC /* ArticleTableViewCell.m */,
+			);
+			name = "Tableview cells";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,6 +289,8 @@
 				28193060112F816700ECF9B4 /* HarvardCrimson_iPhone.xcdatamodeld in Sources */,
 				E572BEF913D712A9009199BC /* FeedListViewController.m in Sources */,
 				E572BF2713D7235C009199BC /* NewsItem.m in Sources */,
+				E572BF4613D7287F009199BC /* BaseItemTableViewCell.m in Sources */,
+				E572BF5113D7295B009199BC /* ArticleTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
