@@ -23,6 +23,10 @@
 		E572BF2713D7235C009199BC /* NewsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF2613D7235C009199BC /* NewsItem.m */; };
 		E572BF4613D7287F009199BC /* BaseItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF4513D7287F009199BC /* BaseItemTableViewCell.m */; };
 		E572BF5113D7295B009199BC /* ArticleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF5013D7295B009199BC /* ArticleTableViewCell.m */; };
+		E572BF5513D735FF009199BC /* NewsRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF5413D735FF009199BC /* NewsRequestOperation.m */; };
+		E572BF5813D7361D009199BC /* RequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF5713D7361D009199BC /* RequestOperation.m */; };
+		E572BF5E13D73994009199BC /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF5D13D73994009199BC /* TBXML.m */; };
+		E572BF6113D739B5009199BC /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E572BF6013D739B5009199BC /* NSDataAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,14 @@
 		E572BF4513D7287F009199BC /* BaseItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseItemTableViewCell.m; sourceTree = "<group>"; };
 		E572BF4F13D7295B009199BC /* ArticleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleTableViewCell.h; sourceTree = "<group>"; };
 		E572BF5013D7295B009199BC /* ArticleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleTableViewCell.m; sourceTree = "<group>"; };
+		E572BF5313D735FF009199BC /* NewsRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsRequestOperation.h; sourceTree = "<group>"; };
+		E572BF5413D735FF009199BC /* NewsRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsRequestOperation.m; sourceTree = "<group>"; };
+		E572BF5613D7361D009199BC /* RequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestOperation.h; sourceTree = "<group>"; };
+		E572BF5713D7361D009199BC /* RequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestOperation.m; sourceTree = "<group>"; };
+		E572BF5C13D73994009199BC /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		E572BF5D13D73994009199BC /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		E572BF5F13D739B5009199BC /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		E572BF6013D739B5009199BC /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +88,9 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E572BF5913D73926009199BC /* Support Classes */,
+				E572BF5213D735F4009199BC /* Operations */,
 				E572BF3E13D72736009199BC /* App Classes */,
-				E572BF2413D72332009199BC /* Models */,
-				E572BF4313D72839009199BC /* Views */,
-				E572BF3413D72620009199BC /* Controllers */,
-				E50AFF9213D57FF300D9F6E6 /* FlurryLib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -188,6 +198,8 @@
 		E572BF3E13D72736009199BC /* App Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E572BF2413D72332009199BC /* Models */,
+				E572BF4313D72839009199BC /* Views */,
 				1D3623240D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.h */,
 				1D3623250D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.m */,
 			);
@@ -199,6 +211,7 @@
 			children = (
 				E572BF4813D7292F009199BC /* Tableview cells */,
 				E572BF4713D72921009199BC /* BaseTableView Cells */,
+				E572BF3413D72620009199BC /* Controllers */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -219,6 +232,37 @@
 				E572BF5013D7295B009199BC /* ArticleTableViewCell.m */,
 			);
 			name = "Tableview cells";
+			sourceTree = "<group>";
+		};
+		E572BF5213D735F4009199BC /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E572BF5313D735FF009199BC /* NewsRequestOperation.h */,
+				E572BF5413D735FF009199BC /* NewsRequestOperation.m */,
+				E572BF5613D7361D009199BC /* RequestOperation.h */,
+				E572BF5713D7361D009199BC /* RequestOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		E572BF5913D73926009199BC /* Support Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E572BF5B13D73986009199BC /* TBXML */,
+				E50AFF9213D57FF300D9F6E6 /* FlurryLib */,
+			);
+			name = "Support Classes";
+			sourceTree = "<group>";
+		};
+		E572BF5B13D73986009199BC /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				E572BF5C13D73994009199BC /* TBXML.h */,
+				E572BF5D13D73994009199BC /* TBXML.m */,
+				E572BF5F13D739B5009199BC /* NSDataAdditions.h */,
+				E572BF6013D739B5009199BC /* NSDataAdditions.m */,
+			);
+			name = TBXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +335,10 @@
 				E572BF2713D7235C009199BC /* NewsItem.m in Sources */,
 				E572BF4613D7287F009199BC /* BaseItemTableViewCell.m in Sources */,
 				E572BF5113D7295B009199BC /* ArticleTableViewCell.m in Sources */,
+				E572BF5513D735FF009199BC /* NewsRequestOperation.m in Sources */,
+				E572BF5813D7361D009199BC /* RequestOperation.m in Sources */,
+				E572BF5E13D73994009199BC /* TBXML.m in Sources */,
+				E572BF6113D739B5009199BC /* NSDataAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
