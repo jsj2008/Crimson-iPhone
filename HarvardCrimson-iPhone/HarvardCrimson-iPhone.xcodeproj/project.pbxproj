@@ -70,9 +70,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E572BF3413D72620009199BC /* Controllers */,
 				E572BF2413D72332009199BC /* Models */,
-				E572BEF613D712A9009199BC /* FeedListViewController.h */,
-				E572BEF713D712A9009199BC /* FeedListViewController.m */,
 				1D3623240D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.h */,
 				1D3623250D0F684500981E51 /* HarvardCrimson_iPhoneAppDelegate.m */,
 				E50AFF9213D57FF300D9F6E6 /* FlurryLib */,
@@ -169,6 +168,15 @@
 				E572BF2613D7235C009199BC /* NewsItem.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E572BF3413D72620009199BC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E572BEF613D712A9009199BC /* FeedListViewController.h */,
+				E572BEF713D712A9009199BC /* FeedListViewController.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
