@@ -12,7 +12,7 @@
 @implementation Crimson_iPhoneAppDelegate
 
 @synthesize window;
-
+@synthesize navController;
 
 #pragma mark -
 #pragma mark Application lifecycle

@@ -8,7 +8,7 @@
 
 #import "NSDate+RelativeDate.h"
 
-@implementation NSDate_RelativeDate
+@implementation NSDate (NSDateAdditions)
 
 +(NSDate *)getDateFromNewsFeed:(NSString *)feedString {
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
