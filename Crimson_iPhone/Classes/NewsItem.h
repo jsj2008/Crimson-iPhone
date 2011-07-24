@@ -18,7 +18,7 @@ typedef enum {
 } Section;
 
 @interface NewsItem : NSObject {
-	NSString *_section;
+	Section section;
 	NSString *_title;
 	NSString *_thumbnailURL;
 	NSString *_link;
@@ -28,7 +28,7 @@ typedef enum {
 	NSString *_author;
 }
 
-@property (nonatomic, assign) Section *section;
+@property (nonatomic, assign) Section section;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *thumbnailURL;
 @property (nonatomic, copy) NSString *link;

@@ -39,7 +39,7 @@
 
 -(void)setUpMultiLineFrameBasedOnWidth:(CGFloat)maxWidth withStartXPosition:(CGFloat)startX{
 	self.lineBreakMode = UILineBreakModeWordWrap;
-	self.numberOfLines = 0;//instructs the label to contain any number of lines
+	self.numberOfLines = 0;//instructs the label to contain any number of linesfile://localhost/Users/sophiechanga/Downloads/RssFun/
     
 	CGFloat labelHeight = [self getHeightBasedOnWidth:maxWidth];
 	[self setFrame:CGRectMake(startX, 0, maxWidth, labelHeight)];

@@ -30,6 +30,14 @@
 		E55658C313DB1D4000479193 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E55658BB13DB1D4000479193 /* SDWebImageDownloader.m */; };
 		E55658C413DB1D4000479193 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E55658BE13DB1D4000479193 /* SDWebImageManager.m */; };
 		E55658C513DB1D4000479193 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E55658C113DB1D4000479193 /* UIImageView+WebCache.m */; };
+		E5635CE913DC21F6000DC94D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635CE613DC21F6000DC94D /* NSDataAdditions.m */; };
+		E5635CEA13DC21F6000DC94D /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635CE813DC21F6000DC94D /* TBXML.m */; };
+		E5635CFD13DC22E5000DC94D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E5635CFC13DC22E5000DC94D /* libz.dylib */; };
+		E5635D0713DC23BB000DC94D /* RequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D0613DC23BB000DC94D /* RequestOperation.m */; };
+		E5635D2413DC2532000DC94D /* BGThreadProcesser.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D2313DC2532000DC94D /* BGThreadProcesser.m */; };
+		E5635D5613DC2DA7000DC94D /* NewsRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D5513DC2DA7000DC94D /* NewsRequestOperation.m */; };
+		E5635D6D13DC35E7000DC94D /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D6C13DC35E7000DC94D /* GTMNSString+HTML.m */; };
+		E5635D7213DC383D000DC94D /* NSDate+RelativeDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D7113DC383D000DC94D /* NSDate+RelativeDate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +83,23 @@
 		E55658BF13DB1D4000479193 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
 		E55658C013DB1D4000479193 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		E55658C113DB1D4000479193 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		E5635CE513DC21F6000DC94D /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		E5635CE613DC21F6000DC94D /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		E5635CE713DC21F6000DC94D /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		E5635CE813DC21F6000DC94D /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		E5635CFC13DC22E5000DC94D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E5635D0513DC23BB000DC94D /* RequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestOperation.h; sourceTree = "<group>"; };
+		E5635D0613DC23BB000DC94D /* RequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestOperation.m; sourceTree = "<group>"; };
+		E5635D2213DC2532000DC94D /* BGThreadProcesser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGThreadProcesser.h; sourceTree = "<group>"; };
+		E5635D2313DC2532000DC94D /* BGThreadProcesser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGThreadProcesser.m; sourceTree = "<group>"; };
+		E5635D5413DC2DA7000DC94D /* NewsRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsRequestOperation.h; sourceTree = "<group>"; };
+		E5635D5513DC2DA7000DC94D /* NewsRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsRequestOperation.m; sourceTree = "<group>"; };
+		E5635D6413DC3205000DC94D /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		E5635D6B13DC35E7000DC94D /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		E5635D6C13DC35E7000DC94D /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		E5635D7013DC383D000DC94D /* NSDate+RelativeDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RelativeDate.h"; sourceTree = "<group>"; };
+		E5635D7113DC383D000DC94D /* NSDate+RelativeDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RelativeDate.m"; sourceTree = "<group>"; };
+		E5635D7713DC3971000DC94D /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +111,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
+				E5635CFD13DC22E5000DC94D /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +121,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E5635D6413DC3205000DC94D /* config.h */,
+				E5635D0013DC23AA000DC94D /* Operations */,
 				E556582413DB17E600479193 /* Support Classes */,
 				E525AB8813D9D39600203B4C /* App Classes */,
 			);
@@ -148,6 +176,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
+				E5635CFC13DC22E5000DC94D /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,9 +256,15 @@
 		E556582413DB17E600479193 /* Support Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E5635D6A13DC35CA000DC94D /* HTML String Helpers */,
+				E5635CE413DC21E0000DC94D /* TBXML */,
 				E55658B413DB1D1D00479193 /* SDWebImage */,
 				E556582513DB17F100479193 /* UILabel+Categories.h */,
 				E556582613DB17F100479193 /* UILabel+Categories.m */,
+				E5635D2213DC2532000DC94D /* BGThreadProcesser.h */,
+				E5635D2313DC2532000DC94D /* BGThreadProcesser.m */,
+				E5635D7013DC383D000DC94D /* NSDate+RelativeDate.h */,
+				E5635D7113DC383D000DC94D /* NSDate+RelativeDate.m */,
 			);
 			name = "Support Classes";
 			sourceTree = "<group>";
@@ -251,6 +286,38 @@
 				E55658C113DB1D4000479193 /* UIImageView+WebCache.m */,
 			);
 			name = SDWebImage;
+			sourceTree = "<group>";
+		};
+		E5635CE413DC21E0000DC94D /* TBXML */ = {
+			isa = PBXGroup;
+			children = (
+				E5635CE513DC21F6000DC94D /* NSDataAdditions.h */,
+				E5635CE613DC21F6000DC94D /* NSDataAdditions.m */,
+				E5635CE713DC21F6000DC94D /* TBXML.h */,
+				E5635CE813DC21F6000DC94D /* TBXML.m */,
+			);
+			name = TBXML;
+			sourceTree = "<group>";
+		};
+		E5635D0013DC23AA000DC94D /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				E5635D0513DC23BB000DC94D /* RequestOperation.h */,
+				E5635D0613DC23BB000DC94D /* RequestOperation.m */,
+				E5635D5413DC2DA7000DC94D /* NewsRequestOperation.h */,
+				E5635D5513DC2DA7000DC94D /* NewsRequestOperation.m */,
+			);
+			name = Operations;
+			sourceTree = "<group>";
+		};
+		E5635D6A13DC35CA000DC94D /* HTML String Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E5635D6B13DC35E7000DC94D /* GTMNSString+HTML.h */,
+				E5635D6C13DC35E7000DC94D /* GTMNSString+HTML.m */,
+				E5635D7713DC3971000DC94D /* GTMDefines.h */,
+			);
+			name = "HTML String Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +398,13 @@
 				E55658C313DB1D4000479193 /* SDWebImageDownloader.m in Sources */,
 				E55658C413DB1D4000479193 /* SDWebImageManager.m in Sources */,
 				E55658C513DB1D4000479193 /* UIImageView+WebCache.m in Sources */,
+				E5635CE913DC21F6000DC94D /* NSDataAdditions.m in Sources */,
+				E5635CEA13DC21F6000DC94D /* TBXML.m in Sources */,
+				E5635D0713DC23BB000DC94D /* RequestOperation.m in Sources */,
+				E5635D2413DC2532000DC94D /* BGThreadProcesser.m in Sources */,
+				E5635D5613DC2DA7000DC94D /* NewsRequestOperation.m in Sources */,
+				E5635D6D13DC35E7000DC94D /* GTMNSString+HTML.m in Sources */,
+				E5635D7213DC383D000DC94D /* NSDate+RelativeDate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +446,8 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
@@ -385,7 +461,9 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
