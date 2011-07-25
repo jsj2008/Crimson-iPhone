@@ -91,9 +91,9 @@
 
 -(void)initialiseView {
 	titleLabel.text = theNewsItem.title;
-	authorLabel.text = theNewsItem.author;
+	authorLabel.text = [NSString stringWithFormat:@"By: %@", theNewsItem.author];
 	if (theNewsItem.thumbnailURL) {
-		if ([theNewsItem.thumbnailURL hasPrefix:@"http://www.thecrimson.com"]) {
+		if ([theNewsItem.thumbnailURL hasPrefix:@"%@", HOME_URL]) {
 			[articleImage setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		else {

@@ -7,7 +7,7 @@
 //
 
 #define kSharingEmailNotEnabled					NSLocalizedString(@"Unable to send mail from this device", @"Sharing - Email not enabled - Text")
-#define kSharingEmailSubjectPrefix				NSLocalizedString(@"Shared from PlayStation Official App", @"Sharing - Email subject - Text")
+#define kSharingEmailSubjectPrefix				NSLocalizedString(@"Shared from The Harvard Crimson App", @"Sharing - Email subject - Text")
 #define kSharingNumberOfViewsSuffix				NSLocalizedString(@"views", @"Sharing -number of views for FB etc - Text")
 
 #define kDefaultAlertViewOk						NSLocalizedString(@"Ok", @"Generic Alert View - Ok Button - Title")

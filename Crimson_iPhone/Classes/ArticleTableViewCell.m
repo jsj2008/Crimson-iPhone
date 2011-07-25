@@ -93,6 +93,9 @@ static NSString *home_URL = @"http://thecrimson.com";
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 	}
+	else {
+		[thumbnailImageView setImage:[UIImage imageNamed:@"grey_seal.png"]];
+	}
 	[descriptionLabel setText:theNewsItem.description];
 	CGRect newFrame = descriptionLabel.frame;
 	newFrame.origin.y = newsTitleLabel.frame.origin.y + newsTitleLabel.frame.size.height + kDescriptionLabelPadding;
