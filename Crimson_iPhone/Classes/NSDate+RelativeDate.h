@@ -11,10 +11,7 @@
 
 @interface NSDate (NSDateAdditions) 
 	
-	//(NSString *)getRelativeDateStringFromDate:(NSDate *)dateToConvert;
-	//+(NSDate* )getDateFromTZTimestamp:(NSString *)timestamp;
 	+(NSDate *)getDateFromNewsFeed:(NSString *)feedString;
-	/*+(NSString *)getDateLongStyleWithNoTime:(NSDate *)date;
-	+(NSString *)getDateShortStyleWithNoTime:(NSDate *)date;*/
+	+(NSString *)getNewsDate:(NSDate *)date;
 	
 @end

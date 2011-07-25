@@ -9,8 +9,14 @@
 #import "NewsDetailViewController.h"
 #import "NewsItem.h"
 #import "UIImageView+WebCache.h"
+#import "NSDate+RelativeDate.h"
 #import "config.h"
 #import "dialogs.h"
+#import "HTMLParser.h"
+
+@interface NewsDetailViewController(Private)
+-(NSString *)stringNameForSection:(Section)theSection;
+@end
 
 @implementation NewsDetailViewController
 
@@ -38,9 +44,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.contentWebView.userInteractionEnabled = NO;
+	self.title = [self stringNameForSection:theNewsItem.section];
 	[self initialiseView];
 	self.navigationController.navigationBarHidden = NO;
 	self.navigationController.navigationBar.backItem.title = @"Back";  
+	self.navigationController.navigationBar.tintColor = [UIColor 
+														 colorWithRed:186.0/255 
+														 green:6.0/255 
+														 blue:0.0/255 
+														 alpha:1];
 }
 
 
@@ -91,9 +103,10 @@
 
 -(void)initialiseView {
 	titleLabel.text = theNewsItem.title;
-	authorLabel.text = [NSString stringWithFormat:@"By: %@", theNewsItem.author];
+	authorLabel.text = [NSString stringWithFormat:@"By: %@", [[NSString stringWithFormat:@"%@", theNewsItem.author] uppercaseString]];
+	dateLabel.text = [NSDate getNewsDate:theNewsItem.pubDate];
 	if (theNewsItem.thumbnailURL) {
-		if ([theNewsItem.thumbnailURL hasPrefix:@"%@", HOME_URL]) {
+		if ([theNewsItem.thumbnailURL hasPrefix:[NSString stringWithFormat:@"%@", HOME_URL]]) {
 			[articleImage setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		else {
@@ -101,15 +114,63 @@
 			[articleImage setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 	}
+	else {
+		[articleImage setImage:[UIImage imageNamed:@"grey_seal.png"]];
+	}
 	[mainScrollView addSubview:mainContentView];
 	contentWebView.backgroundColor = [UIColor clearColor];
 	[contentWebView setOpaque:NO];
-	[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>body{background-color:transparent; padding-left:12px;}</style><style type=\"text/css\">a:link {color:#d2d2d2;text-decoration: none;}</style></head><body><div style=\"font-family:'Helvetica Neue';font-size:13;color:#000000\">%@</div></body></html>", @"Web View Here"] baseURL:nil];
+	NSError * error = nil;
+	NSString *link = [NSString stringWithFormat:@"%@", theNewsItem.link];
+	HTMLParser * parser = [[HTMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:link] error:&error];
+	if (error) {
+		NSLog(@"Error: %@", error);
+		return;
+	}
+	HTMLNode *bodyNode = [parser body];
+	NSArray *divNodes = [bodyNode findChildTags:@"div"];
+	NSString *articleText = nil;
+	for (HTMLNode *divNode in divNodes) {
+		if ([[divNode getAttributeNamed:@"class"] isEqualToString:@"text"]) {
+			articleText = rawContentsOfNode(divNode -> _node);
+		}
+	}
+	[parser release];
+	//Load the request in the UIWebView.
+	[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
 	[mainScrollView insertSubview:contentWebView belowSubview:mainContentView];
-	
 	[shareButton setTitle:@"Share" forState:UIControlStateNormal];
 	[mainScrollView addSubview:shareButton];
 }
+
+-(NSString *)stringNameForSection:(Section)theSection {
+	NSString *sectionString = @"";
+	switch (theSection) {
+		case eSectionNews:
+			sectionString = @"News";
+			break;
+		case eSectionOpinion:
+			sectionString = @"Opinion";
+			break;
+		case eSectionSports:
+			sectionString = @"Sports";
+			break;
+		case eSectionFM:
+			sectionString = @"FM";
+			break;
+		case eSectionArts:
+			sectionString = @"Arts";
+			break;
+		case eSectionFlyby:
+			sectionString = @"Flyby";
+			break;
+		default:
+			sectionString = @"";
+			break;
+	}
+	return sectionString;
+}
+
 
 -(IBAction)buttonPressed:(id)sender {
 	if (shareButton == sender) {

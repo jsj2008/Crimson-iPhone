@@ -12,8 +12,17 @@
 
 +(NSDate *)getDateFromNewsFeed:(NSString *)feedString {
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-	[dateFormatter setDateFormat:@"yyyy-mm-dd HH:mm:ss"];
+	[dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
 	return [dateFormatter dateFromString:feedString];
+}
+
++(NSString *)getNewsDate:(NSDate *)date
+{
+	//E.g. Monday, July 22, 2011
+	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+	[dateFormatter setDateFormat:@"EEEE, MMMM dd, yyyy"];
+	
+	return [dateFormatter stringFromDate:date];
 }
 
 @end

@@ -14,15 +14,14 @@
 
 #define kTableViewCellFrame			CGRectMake(0,0,320,88)
 #define kThumbImageFrame			CGRectMake(5, 5, 80, 66)
-#define kNewsTitleLabelFrame		CGRectMake(90, 6, 225, 15)
-#define kDescriptionLabelFrame		CGRectMake(90, 24, 225, 45)
+#define kNewsTitleLabelFrame		CGRectMake(90, 5, 225, 15)
+#define kDescriptionLabelFrame		CGRectMake(90, 23, 225, 45)
 #define kSeparatorImageFrame		CGRectMake(5, 88, 320, 1)
-#define kDescriptionLabelPadding	4	
-#define kTopPadding					6
+#define kDescriptionLabelPadding	3	
+#define kTopPadding					5
 #define kSeparatorPadding			5
 
 static UIImage *separatorImage = nil;
-static NSString *home_URL = @"http://thecrimson.com";
 
 @interface ArticleTableViewCell(Private)
 
@@ -85,11 +84,11 @@ static NSString *home_URL = @"http://thecrimson.com";
 	[self clearCell];
 	[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title];
 	if (theNewsItem.thumbnailURL) {
-		if ([theNewsItem.thumbnailURL hasPrefix:@"http://www.thecrimson.com"]) {
+		if ([theNewsItem.thumbnailURL hasPrefix:HOME_URL]) {
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		else {
-			NSString *fullURL = [NSString stringWithFormat:@"%@%@", home_URL, theNewsItem.thumbnailURL];
+			NSString *fullURL = [NSString stringWithFormat:@"%@%@", HOME_URL, theNewsItem.thumbnailURL];
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 	}
@@ -126,7 +125,7 @@ static NSString *home_URL = @"http://thecrimson.com";
 	tmpNewsTitleLabel.lineBreakMode = UILineBreakModeWordWrap;
 	tmpNewsTitleLabel.textColor = [UIColor blackColor];
 	tmpNewsTitleLabel.backgroundColor = [UIColor clearColor];
-	tmpNewsTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:12];
+	tmpNewsTitleLabel.font = [UIFont fontWithName:@"Georgia-Bold" size:12];
 	tmpNewsTitleLabel.adjustsFontSizeToFitWidth = NO;
 	tmpNewsTitleLabel.textAlignment = UITextAlignmentLeft;
 	tmpNewsTitleLabel.text = @"";
@@ -138,7 +137,7 @@ static NSString *home_URL = @"http://thecrimson.com";
 	tmpDescriptionLabelBuilder.numberOfLines = 2;
 	tmpDescriptionLabelBuilder.textColor = [UIColor blackColor];
 	tmpDescriptionLabelBuilder.backgroundColor = [UIColor clearColor];
-	tmpDescriptionLabelBuilder.font = [UIFont fontWithName:@"HelveticaNeue" size:12];
+	tmpDescriptionLabelBuilder.font = [UIFont fontWithName:@"Georgia" size:12];
 	tmpDescriptionLabelBuilder.adjustsFontSizeToFitWidth = NO;
 	tmpDescriptionLabelBuilder.textAlignment = UITextAlignmentLeft;
 	tmpDescriptionLabelBuilder.text = @"";

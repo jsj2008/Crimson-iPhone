@@ -88,19 +88,15 @@
 	
 	if(requestType == eRequestTypeCachedOnly || requestType == eRequestTypeCachedFirst) 
     {
-		NSLog(@"Cached only or cached first");
 		self.resultArray = [NSMutableArray arrayWithArray:[self cachedData]];
 		[self requestFinished];
 	}
 	
 	if(requestType != eRequestTypeCachedOnly) 
 	{
-		NSLog(@"Not cached only");
 		//Init array
 		self.resultArray = [NSMutableArray array];
 		
-		NSLog(@"About to build request");
-		NSLog(@"%@", self.feedURL);
 		//Build request
 		NSURL *url = [NSURL URLWithString:self.feedURL];
 		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
@@ -111,7 +107,6 @@
 		resultData = [request responseData];
 		if(resultData) 
 		{
-			NSLog(@"There is result data");
 			NSString *responseString = [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
 			
 			[responseString release];
@@ -127,7 +122,6 @@
 		} 
 		else 
 		{
-			NSLog(@"There is no result data");
 			//Attempt to get from cache
 			self.resultArray = [NSMutableArray arrayWithArray:[self cachedData]];
 			
