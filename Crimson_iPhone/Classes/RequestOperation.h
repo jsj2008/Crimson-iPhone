@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ASIHTTPRequest.h"
 
+#define API_RESULT_STATUS_KEY		@"Message"
 #define RESPONSEDATA_KEY			@"ResponseData"
 #define RESPONSEERROR_KEY		@"ResponseError"
 

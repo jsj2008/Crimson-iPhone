@@ -25,10 +25,12 @@
 @synthesize section;
 
 +(id)operationWithSection:(Section)theSection {
+	NSLog(@"Operating with section");
 	return [[[[self class] alloc]initWithSection:theSection]autorelease];
 }
 
 -(id)initWithSection:(Section)theSection{
+	NSLog(@"Initializing with Section");
 	self = [super initWithRequestType:eRequestTypeCachedFirst];
 	if (self) {
 		self.section = theSection;
@@ -40,6 +42,7 @@
 }
 
 -(void)parseResponse {
+	NSLog(@"Attempting to parse response");
 	if (xmlDocument) {
 		TBXMLElement *root = xmlDocument.rootXMLElement;
 		if (root) {
@@ -58,20 +61,20 @@
 							if ([[TBXML elementName:childElement] isEqualToString:@"title"]) {
 								theNewsItem.title = [[TBXML textForElement:childElement]gtm_stringByUnescapingFromHTML];
 							}
-							else if ([[TBXML elementName:childElement] isEqualToString:@"description"]) {
+							if ([[TBXML elementName:childElement] isEqualToString:@"description"]) {
 								theNewsItem.description = [[TBXML textForElement:childElement]gtm_stringByUnescapingFromHTML];
 							}
-							else if ([[TBXML elementName:childElement] isEqualToString:@"pubDate"]) {
+							if ([[TBXML elementName:childElement] isEqualToString:@"pubDate"]) {
 								theNewsItem.ePubDate = [TBXML textForElement:childElement];
 								theNewsItem.pubDate = [NSDate getDateFromNewsFeed:theNewsItem.ePubDate];
 							}
-							else if ([[TBXML elementName:childElement] isEqualToString:@"link"]) {
+							if ([[TBXML elementName:childElement] isEqualToString:@"link"]) {
 								theNewsItem.link = [TBXML textForElement:childElement];
 							}
-							else if ([[TBXML elementName:childElement] isEqualToString:@"media:content"]) {
+							if ([[TBXML elementName:childElement] isEqualToString:@"media:content"]) {
 								theNewsItem.thumbnailURL = [TBXML valueOfAttributeNamed:@"url" forElement:childElement];
 							}
-							else if ([[TBXML elementName:childElement] isEqualToString:@"dc:creator"]) {
+							if ([[TBXML elementName:childElement] isEqualToString:@"dc:creator"]) {
 								theNewsItem.author = [[TBXML textForElement:childElement]gtm_stringByUnescapingFromHTML];
 							}
 							childElement = childElement -> nextSibling;
@@ -88,18 +91,22 @@
 }
 
 -(void)sortResults {
+	NSLog(@"Sorting results");
 	NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:@"pubDate" ascending:NO];
-	[self.resultArray sortUsingDescriptors:[NSArray arrayWithObject:sortDesc]];
+	if ([self.resultArray count] > 0) {
+		[self.resultArray sortUsingDescriptors:[NSArray arrayWithObject:sortDesc]];
+	}
 	[sortDesc release];
 }
 
 -(void)requestFinished {
+	NSLog(@"Called requestFinished");
 	[self sortResults];
 	if ([self.resultArray count]) {
 		[self setCachedData:self.resultArray];
 	}
 	
-	NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithCapacity:2];
+	NSMutableDictionary *userInfo = [NSMutableDictionary dictionaryWithCapacity:6];
 	if (self.resultArray) {
 		[userInfo setObject:self.resultArray forKey:RESPONSEDATA_KEY];
 	}
@@ -137,7 +144,7 @@
 	NSString *returnURL = nil;
 	
 	returnURL = [NSString stringWithFormat:@"%@%@",FEED_BASE_URL, sectionString];
-	
+	NSLog(@"URL:%@",returnURL);
 	return returnURL;
 }
 

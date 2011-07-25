@@ -8,14 +8,32 @@
 
 #import <UIKit/UIKit.h>
 
-@class NewsDetailViewController;
-
 @interface FeedListViewController : UIViewController {
-	IBOutlet NewsDetailViewController *detailsViewController;
+	UITableView *articlesTable;
+	UISegmentedControl *segControl;
+	
+	NSMutableArray *currentArticleItems;
+	NSMutableArray *allNewsArticles;
+	NSMutableArray *allOpinionArticles;
+	NSMutableArray *allSportsArticles;
+	NSMutableArray *allFMArticles;
+	NSMutableArray *allArtsArticles;
+	NSMutableArray *allFlybyArticles;
 }
 
-@property(nonatomic, retain) NewsDetailViewController *detailsViewController;
+@property(nonatomic, retain) IBOutlet UITableView *articlesTable;
+@property(nonatomic, retain) IBOutlet UISegmentedControl *segControl;
 
--(IBAction)PressMe:(id)sender;
+@property(nonatomic, retain) NSMutableArray *allNewsArticles;
+@property(nonatomic, retain) NSMutableArray *allOpinionArticles;
+@property(nonatomic, retain) NSMutableArray *allSportsArticles;
+@property(nonatomic, retain) NSMutableArray *allFMArticles;
+@property(nonatomic, retain) NSMutableArray *allArtsArticles;
+@property(nonatomic, retain) NSMutableArray *allFlybyArticles;
+@property(nonatomic, retain) NSMutableArray *currentArticleItems;
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
+-(IBAction)segmentedControlSegmentChanged:(id)sender;
+-(void)updateTableWithNewData:(NSMutableArray *)newArray;
 
 @end

@@ -5,7 +5,6 @@
 //  Created by Sophie Chang on 7/24/11.
 //  Copyright 2011 Harvard. All rights reserved.
 //
-
 #import "BGThreadProcesser.h"
 
 static BGThreadProcesser *sharedInstance = nil;

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
 @class NewsItem;
 
-@interface NewsDetailViewController : UIViewController {
+@interface NewsDetailViewController : UIViewController <MFMailComposeViewControllerDelegate> {
 	UIScrollView *mainScrollView;
 	UIView *mainContentView;
 	UILabel *titleLabel;

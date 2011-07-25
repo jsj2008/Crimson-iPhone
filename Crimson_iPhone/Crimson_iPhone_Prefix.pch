@@ -12,4 +12,6 @@
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
     #import <CoreData/CoreData.h>
+	#import "config.h"
+	#import "dialogs.h"
 #endif

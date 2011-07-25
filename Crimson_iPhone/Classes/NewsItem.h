@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModel.h"
 
 typedef enum {
 	eSectionNews,
@@ -17,7 +18,7 @@ typedef enum {
 	eSectionFlyby,
 } Section;
 
-@interface NewsItem : NSObject {
+@interface NewsItem : BaseModel {
 	Section section;
 	NSString *_title;
 	NSString *_thumbnailURL;

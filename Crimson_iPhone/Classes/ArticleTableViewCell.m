@@ -13,9 +13,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define kTableViewCellFrame			CGRectMake(0,0,320,88)
-#define kThumbImageFrame			CGRectMake(5, 5, 71, 40)
-#define kNewsTitleLabelFrame		CGRectMake(84, 6, 231, 15)
-#define kDescriptionLabelFrame		CGRectMake(84, 24, 231, 45)
+#define kThumbImageFrame			CGRectMake(5, 5, 80, 66)
+#define kNewsTitleLabelFrame		CGRectMake(90, 6, 225, 15)
+#define kDescriptionLabelFrame		CGRectMake(90, 24, 225, 45)
 #define kSeparatorImageFrame		CGRectMake(5, 88, 320, 1)
 #define kDescriptionLabelPadding	4	
 #define kTopPadding					6
@@ -64,7 +64,7 @@ static NSString *home_URL = @"http://thecrimson.com";
 
 -(void)initialiseView {
 	self.frame = kTableViewCellFrame;
-	self.thumbnailImageView = [[self class] thumbnailImageViewBuilder];
+	self.thumbnailImageView = [[[UIImageView alloc]initWithFrame:kThumbImageFrame]autorelease];
 	self.newsTitleLabel = [[self class]newsTitleLabelBuilder];
 	self.descriptionLabel = [[self class] descriptionLabelBuilder];
 	self.separatorImageView = [[self class]separatorImageViewBuilder];
@@ -93,6 +93,7 @@ static NSString *home_URL = @"http://thecrimson.com";
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 	}
+	[descriptionLabel setText:theNewsItem.description];
 	CGRect newFrame = descriptionLabel.frame;
 	newFrame.origin.y = newsTitleLabel.frame.origin.y + newsTitleLabel.frame.size.height + kDescriptionLabelPadding;
 	descriptionLabel.frame = newFrame;
