@@ -13,6 +13,7 @@
 #import "config.h"
 #import "dialogs.h"
 #import "HTMLParser.h"
+#import "SHK.h"
 
 @interface NewsDetailViewController(Private)
 -(NSString *)stringNameForSection:(Section)theSection;
@@ -22,13 +23,14 @@
 
 @synthesize mainScrollView;
 @synthesize mainContentView;
+@synthesize imageView;
 @synthesize titleLabel;
 @synthesize dateLabel;
 @synthesize articleImage;
 @synthesize contentWebView;
 @synthesize authorLabel;
 @synthesize shareButton;
-
+@synthesize shareBar;
 @synthesize theNewsItem;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -44,13 +46,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.contentWebView.userInteractionEnabled = NO;
-	self.title = [self stringNameForSection:theNewsItem.section];
+	UILabel *tmpTitleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 30)] autorelease];
+	tmpTitleLabel.textAlignment = UITextAlignmentCenter;
+	tmpTitleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
+	tmpTitleLabel.text = [self stringNameForSection:theNewsItem.section];
+	tmpTitleLabel.textColor = [UIColor whiteColor];
+	tmpTitleLabel.backgroundColor = [UIColor clearColor];
+	self.navigationItem.titleView = tmpTitleLabel;
 	[self initialiseView];
 	self.navigationController.navigationBarHidden = NO;
 	self.navigationController.navigationBar.backItem.title = @"Back";  
 	self.navigationController.navigationBar.tintColor = [UIColor 
-														 colorWithRed:186.0/255 
-														 green:6.0/255 
+														 colorWithRed:0.0/255 
+														 green:0.0/255 
 														 blue:0.0/255 
 														 alpha:1];
 }
@@ -75,6 +83,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	self.imageView = nil;
 	self.mainScrollView = nil;
 	self.mainContentView = nil;
 	self.articleImage = nil;
@@ -83,12 +92,13 @@
 	self.dateLabel = nil;
 	self.contentWebView = nil;
 	self.shareButton = nil;
+	self.shareBar = nil;
 }
 
 
 - (void)dealloc {
     [super dealloc];
-	
+	[imageView release];
 	[mainScrollView release];
 	[mainContentView release];
 	[titleLabel release];
@@ -97,15 +107,26 @@
 	[authorLabel release];
 	[contentWebView release];
 	[shareButton release];
-	
+	[shareBar release];
 	[theNewsItem release];
 }
 
 -(void)initialiseView {
-	titleLabel.text = theNewsItem.title;
+	shareBar = [UIToolbar new];
+	shareBar.barStyle = UIBarStyleBlack;
+	[shareBar sizeToFit];
+	titleLabel.backgroundColor = [UIColor clearColor];
+	[titleLabel setTitleWithFlexibleHeight:theNewsItem.title];
+	CGRect newFrame = authorLabel.frame;
+	newFrame.origin.y = titleLabel.frame.origin.y + titleLabel.frame.size.height-2;
+	authorLabel.frame = newFrame;
 	authorLabel.text = [NSString stringWithFormat:@"By: %@", [[NSString stringWithFormat:@"%@", theNewsItem.author] uppercaseString]];
+	newFrame = dateLabel.frame;
+	newFrame.origin.y = authorLabel.frame.origin.y + authorLabel.frame.size.height-7;
+	dateLabel.frame = newFrame;
 	dateLabel.text = [NSDate getNewsDate:theNewsItem.pubDate];
 	if (theNewsItem.thumbnailURL) {
+		articleImage.contentMode = UIViewContentModeScaleAspectFit;
 		if ([theNewsItem.thumbnailURL hasPrefix:[NSString stringWithFormat:@"%@", HOME_URL]]) {
 			[articleImage setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
@@ -113,10 +134,20 @@
 			NSString *fullURL = [NSString stringWithFormat:@"%@%@", HOME_URL, theNewsItem.thumbnailURL];
 			[articleImage setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
+		imageView.backgroundColor = [UIColor clearColor];
+		//[imageView addSubview:articleImage];
+		imageView.frame = CGRectMake(0, 0, 320, articleImage.frame.size.height+5);
+		[mainScrollView insertSubview:imageView aboveSubview:mainContentView];
+		float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
+		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y +15, 320, rowHeight);
 	}
 	else {
-		[articleImage setImage:[UIImage imageNamed:@"grey_seal.png"]];
+		CGRect theFrame = CGRectMake(0,0,0,0);
+		imageView.frame = theFrame;
+		float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
+		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y-15, 320, rowHeight);
 	}
+	mainContentView.backgroundColor = [UIColor clearColor];
 	[mainScrollView addSubview:mainContentView];
 	contentWebView.backgroundColor = [UIColor clearColor];
 	[contentWebView setOpaque:NO];
@@ -135,12 +166,12 @@
 			articleText = rawContentsOfNode(divNode -> _node);
 		}
 	}
-	[parser release];
 	//Load the request in the UIWebView.
 	[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
+	[parser release];
 	[mainScrollView insertSubview:contentWebView belowSubview:mainContentView];
-	[shareButton setTitle:@"Share" forState:UIControlStateNormal];
-	[mainScrollView addSubview:shareButton];
+	
+	[mainScrollView addSubview:shareBar];
 }
 
 -(NSString *)stringNameForSection:(Section)theSection {
@@ -174,7 +205,15 @@
 
 -(IBAction)buttonPressed:(id)sender {
 	if (shareButton == sender) {
-		// TODO do something here with shareButton
+		// Create the item to share (in this example, a url)
+		NSURL *url = [NSURL URLWithString:theNewsItem.link];
+		SHKItem *item = [SHKItem URL:url title:theNewsItem.title];
+		
+		// Get the ShareKit action sheet
+		SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
+		
+		// Display the action sheet
+		[actionSheet showFromToolbar:self.navigationController.toolbar];
 	}
 }
 
@@ -190,17 +229,22 @@
 	
 	CGRect theFrame = contentWebView.frame;
 	theFrame.origin.x = - 2;
-	theFrame.origin.y = mainContentView.frame.size.height + mainContentView.frame.origin.y - 10;
+	theFrame.origin.y = mainContentView.frame.size.height + mainContentView.frame.origin.y - 20;
 	contentWebView.frame = theFrame;
 	
 	//Reposition share button
-	theFrame = shareButton.frame;
+	theFrame = shareBar.frame;
 	theFrame.origin.x = ((320-theFrame.size.width)/2);
-	theFrame.origin.y = contentWebView.frame.origin.y + contentWebView.frame.size.height + 5;
-	shareButton.frame = theFrame;
-	
-	//Resize main scroll view content view
-	mainScrollView.contentSize = CGSizeMake(320, mainContentView.frame.size.height + contentWebView.frame.size.height + shareButton.frame.size.height + 15);
+	theFrame.origin.y = contentWebView.frame.origin.y + contentWebView.frame.size.height;
+	shareBar.frame = theFrame;
+	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+	shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(buttonPressed:)];
+	NSArray *items = [NSArray arrayWithObjects: flexibleSpace, shareButton, flexibleSpace, nil];
+	[shareBar setItems:items animated:NO];
+	CGRect contentRect = CGRectZero;
+	for (UIView *view in [mainScrollView subviews])
+		contentRect = CGRectUnion(contentRect, view.frame);
+	mainScrollView.contentSize = contentRect.size;
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType 
@@ -211,45 +255,6 @@
 	}
 	
 	return YES;
-}
-
--(void)composeMail {
-	
-	if(![MFMailComposeViewController canSendMail]) {
-		
-		UIAlertView *cantMailAlert = [[UIAlertView alloc]initWithTitle:@""
-															   message:kSharingEmailNotEnabled
-															  delegate:nil
-													 cancelButtonTitle:kDefaultAlertViewOk
-													 otherButtonTitles:nil];
-		[cantMailAlert show];
-		[cantMailAlert release];
-		return;
-	}
-	
-	MFMailComposeViewController *mailController = [[[MFMailComposeViewController alloc]init]autorelease];
-	mailController.navigationBar.tintColor = [UIColor blackColor];
-	[mailController setSubject:kSharingEmailSubjectPrefix];
-	[mailController setMessageBody:[NSString stringWithFormat:@"<p>%@</p><p>%@</p><p>%@</p>", theNewsItem.title, theNewsItem.description, theNewsItem.link] isHTML:YES];
-	mailController.mailComposeDelegate = self;
-	[self presentModalViewController:mailController animated:YES];
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller 
-		  didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
-	
-	if(error) 
-	{
-		
-		UIAlertView *mailErrorAlert = [[UIAlertView alloc]initWithTitle:@"" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok"otherButtonTitles:nil];
-		[mailErrorAlert show];
-		[mailErrorAlert release];
-		
-	}
-	else {
-		
-		[self dismissModalViewControllerAnimated:YES];
-	}
 }
 
 @end

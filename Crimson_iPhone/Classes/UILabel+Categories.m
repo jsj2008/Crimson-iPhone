@@ -57,7 +57,8 @@
     
 	return size;
 }
--(void)setTextWithFlexibleHeight:(NSString *)paramText 
+
+-(void)setTextWithFlexibleHeightWithNoImage:(NSString *)paramText
 {    
     self.text = paramText;
     //forced the linebreak mode and numberoflines to force it to wrap the text
@@ -67,7 +68,7 @@
     self.lineBreakMode = UILineBreakModeWordWrap;
     
     //Calculate the expected size based on the font and linebreak mode of your label
-    CGSize maximumLabelSize = CGSizeMake(296,9999);
+    CGSize maximumLabelSize = CGSizeMake(303,9999);
     
     CGSize expectedLabelSize = [paramText sizeWithFont:self.font 
 									 constrainedToSize:maximumLabelSize 
@@ -80,5 +81,51 @@
     
 }
 
+
+-(void)setTextWithFlexibleHeight:(NSString *)paramText
+{    
+    self.text = paramText;
+    //forced the linebreak mode and numberoflines to force it to wrap the text
+    //some of the labels that were created via Interface Builder didnt have the correct numberoflines
+    //and since this is a function to make then bigger according to the text, ive forced it here
+    self.numberOfLines = 0;
+    self.lineBreakMode = UILineBreakModeWordWrap;
+    
+    //Calculate the expected size based on the font and linebreak mode of your label
+    CGSize maximumLabelSize = CGSizeMake(227,9999);
+    
+    CGSize expectedLabelSize = [paramText sizeWithFont:self.font 
+									 constrainedToSize:maximumLabelSize 
+										 lineBreakMode:self.lineBreakMode]; 
+    
+    //adjust the label the the new height.
+    CGRect newFrame = self.frame;
+    newFrame.size.height = expectedLabelSize.height;
+    self.frame = newFrame;
+    
+}
+
+-(void)setTitleWithFlexibleHeight:(NSString *)title
+{    
+    self.text = title;
+    //forced the linebreak mode and numberoflines to force it to wrap the text
+    //some of the labels that were created via Interface Builder didnt have the correct numberoflines
+    //and since this is a function to make then bigger according to the text, ive forced it here
+    self.numberOfLines = 0;
+    self.lineBreakMode = UILineBreakModeWordWrap;
+    
+    //Calculate the expected size based on the font and linebreak mode of your label
+    CGSize maximumLabelSize = CGSizeMake(288,9999);
+    
+    CGSize expectedLabelSize = [title sizeWithFont:self.font 
+									 constrainedToSize:maximumLabelSize 
+										 lineBreakMode:self.lineBreakMode]; 
+    
+    //adjust the label the the new height.
+    CGRect newFrame = self.frame;
+    newFrame.size.height = expectedLabelSize.height;
+    self.frame = newFrame;
+    
+}
 @end
 

@@ -12,14 +12,17 @@
 #import "UIImageView+WebCache.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define kTableViewCellFrame			CGRectMake(0,0,320,88)
-#define kThumbImageFrame			CGRectMake(5, 5, 80, 66)
-#define kNewsTitleLabelFrame		CGRectMake(90, 5, 225, 15)
-#define kDescriptionLabelFrame		CGRectMake(90, 23, 225, 45)
+#define kTableViewCellFrame			CGRectMake(0,0,320, 71)
+#define kThumbImageFrame			CGRectMake(7, 7, 73, 57)
+#define kNoThumbImageFrame			CGRectMake(0, 0, 0, 0)
+#define kNewsTitleLabelFrame		CGRectMake(88, 5, 227, 0)
+#define kDescriptionLabelFrame		CGRectMake(88, 23, 227, 45)
+#define kNewsTitleNoImageLabelFrame	CGRectMake(9, 5, 301, 0)
+#define kDescriptionNoImgLabelFrame	CGRectMake(9, 23, 301, 45)
 #define kSeparatorImageFrame		CGRectMake(5, 88, 320, 1)
-#define kDescriptionLabelPadding	3	
+#define kDescriptionLabelPadding	-5
 #define kTopPadding					5
-#define kSeparatorPadding			5
+#define kSeparatorPadding			3
 
 static UIImage *separatorImage = nil;
 
@@ -82,8 +85,8 @@ static UIImage *separatorImage = nil;
 
 -(void)configureWithNewsItem:(NewsItem *)theNewsItem {
 	[self clearCell];
-	[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title];
 	if (theNewsItem.thumbnailURL) {
+		thumbnailImageView.frame = kThumbImageFrame;
 		if ([theNewsItem.thumbnailURL hasPrefix:HOME_URL]) {
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
@@ -91,9 +94,15 @@ static UIImage *separatorImage = nil;
 			NSString *fullURL = [NSString stringWithFormat:@"%@%@", HOME_URL, theNewsItem.thumbnailURL];
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
+		newsTitleLabel.frame = kNewsTitleLabelFrame;
+		[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title];
+		descriptionLabel.frame = kDescriptionLabelFrame;
 	}
 	else {
-		[thumbnailImageView setImage:[UIImage imageNamed:@"grey_seal.png"]];
+		thumbnailImageView.frame = kNoThumbImageFrame;
+		newsTitleLabel.frame = kNewsTitleNoImageLabelFrame;
+		[newsTitleLabel setTextWithFlexibleHeightWithNoImage:theNewsItem.title];
+		descriptionLabel.frame = kDescriptionNoImgLabelFrame;
 	}
 	[descriptionLabel setText:theNewsItem.description];
 	CGRect newFrame = descriptionLabel.frame;
@@ -120,12 +129,12 @@ static UIImage *separatorImage = nil;
 }
 
 +(UILabel *)newsTitleLabelBuilder {
-	UILabel *tmpNewsTitleLabel = [[[UILabel alloc]initWithFrame:kNewsTitleLabelFrame]autorelease];
+	UILabel *tmpNewsTitleLabel = tmpNewsTitleLabel = [[[UILabel alloc]initWithFrame:kNewsTitleLabelFrame]autorelease];;
 	tmpNewsTitleLabel.numberOfLines = 0;
 	tmpNewsTitleLabel.lineBreakMode = UILineBreakModeWordWrap;
 	tmpNewsTitleLabel.textColor = [UIColor blackColor];
 	tmpNewsTitleLabel.backgroundColor = [UIColor clearColor];
-	tmpNewsTitleLabel.font = [UIFont fontWithName:@"Georgia-Bold" size:12];
+	tmpNewsTitleLabel.font = [UIFont fontWithName:@"Georgia-Bold" size:13];
 	tmpNewsTitleLabel.adjustsFontSizeToFitWidth = NO;
 	tmpNewsTitleLabel.textAlignment = UITextAlignmentLeft;
 	tmpNewsTitleLabel.text = @"";

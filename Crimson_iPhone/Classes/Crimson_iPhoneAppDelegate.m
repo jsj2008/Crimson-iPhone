@@ -8,6 +8,15 @@
 
 #import "Crimson_iPhoneAppDelegate.h"
 
+@implementation UINavigationBar (UINavigationBarCategory)
+
+- (void)drawRect:(CGRect)rect
+{
+	UIImage *image = [UIImage imageNamed:@"seal_background.png"];
+	[image drawInRect:rect];
+}
+
+@end
 
 @implementation Crimson_iPhoneAppDelegate
 

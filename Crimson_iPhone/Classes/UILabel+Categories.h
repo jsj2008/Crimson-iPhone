@@ -59,8 +59,17 @@
  @method Adjust frame of label
  @param UILabel
  */
+-(void)setTextWithFlexibleHeightWithNoImage:(NSString *)label; 
+/*
+ @method Adjust frame of label
+ @param UILabel
+ */
 -(void)setTextWithFlexibleHeight:(NSString *)label; 
-
+/*
+ @method Adjust frame of label
+ @param UILabel
+ */
+-(void)setTitleWithFlexibleHeight:(NSString *)title; 
 
 @end
 
