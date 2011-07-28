@@ -15,10 +15,10 @@
 		<string>SHKFacebook</string>
 		<string>SHKGoogleReader</string>
 		<string>SHKDelicious</string>
-		<string>SHKPinboard</string>
+		<string>SHKTumblr</string>
 		<string>SHKReadItLater</string>
 		<string>SHKInstapaper</string>
-		<string>SHKTumblr</string>
+		<string>SHKPinboard</string>
 	</array>
 </dict>
 </plist>

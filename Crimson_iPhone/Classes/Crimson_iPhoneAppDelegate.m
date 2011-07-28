@@ -7,6 +7,7 @@
 //
 
 #import "Crimson_iPhoneAppDelegate.h"
+#import "FlurryAPI.h"
 
 @implementation UINavigationBar (UINavigationBarCategory)
 
@@ -31,7 +32,7 @@
     // Override point for customization after application launch.
     [self.window addSubview:navController.view];
     [self.window makeKeyAndVisible];
-    
+    [FlurryAPI startSession:@"VZ5GH2IRDJMT7FJ3YVIC"];
     return YES;
 }
 

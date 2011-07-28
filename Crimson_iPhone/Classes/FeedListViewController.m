@@ -13,6 +13,7 @@
 #import "UIView+FirstResponder.h"
 #import "dialogs.h"
 #import "config.h"
+#import "FlurryAPI.h"
 
 @interface FeedListViewController(Private)
 
@@ -150,26 +151,32 @@
 	if (0 == segControl.selectedSegmentIndex) {
 		[self.currentArticleItems removeAllObjects];
 		self.currentArticleItems = [NSMutableArray arrayWithArray:self.allNewsArticles];
+		[FlurryAPI logEvent:@"Viewed News feed"];
 	}
 	if (1 == segControl.selectedSegmentIndex) {
 		[self.currentArticleItems removeAllObjects];
 		self.currentArticleItems = [NSMutableArray arrayWithArray:self.allOpinionArticles];
+		[FlurryAPI logEvent:@"Viewed Opinion feed"];
 	}
 	if (2 == segControl.selectedSegmentIndex) {
 		[self.currentArticleItems removeAllObjects];
 		self.currentArticleItems = [NSMutableArray arrayWithArray:self.allSportsArticles];
+		[FlurryAPI logEvent:@"Viewed Sports feed"];
 	}
 	if (3 == segControl.selectedSegmentIndex) {
 		[self.currentArticleItems removeAllObjects];
 		self.currentArticleItems = [NSMutableArray arrayWithArray:self.allFMArticles];
+		[FlurryAPI logEvent:@"Viewed FM feed"];
 	}
 	if (4 == segControl.selectedSegmentIndex) {
 		[self.currentArticleItems removeAllObjects];
 		self.currentArticleItems = [NSMutableArray arrayWithArray:self.allArtsArticles];
+		[FlurryAPI logEvent:@"Viewed Arts feed"];
 	}
 	if (5 == segControl.selectedSegmentIndex) {
 		[self.currentArticleItems removeAllObjects];
 		self.currentArticleItems = [NSMutableArray arrayWithArray:self.allFlybyArticles];
+		[FlurryAPI logEvent:@"Viewed Flyby feed"];
 	}
 	[self.articlesTable reloadData];
 }

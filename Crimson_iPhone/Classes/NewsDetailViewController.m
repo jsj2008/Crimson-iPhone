@@ -10,10 +10,12 @@
 #import "NewsItem.h"
 #import "UIImageView+WebCache.h"
 #import "NSDate+RelativeDate.h"
+#import "UILabel+Categories.h"
 #import "config.h"
 #import "dialogs.h"
 #import "HTMLParser.h"
 #import "SHK.h"
+#import "FlurryAPI.h"
 
 @interface NewsDetailViewController(Private)
 -(NSString *)stringNameForSection:(Section)theSection;
@@ -112,6 +114,8 @@
 }
 
 -(void)initialiseView {
+	NSString *logMsg = [NSString stringWithFormat:@"Viewed article: %@", theNewsItem.title];
+	[FlurryAPI logEvent:logMsg];
 	shareBar = [UIToolbar new];
 	shareBar.barStyle = UIBarStyleBlack;
 	[shareBar sizeToFit];
@@ -135,8 +139,7 @@
 			[articleImage setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		imageView.backgroundColor = [UIColor clearColor];
-		//[imageView addSubview:articleImage];
-		imageView.frame = CGRectMake(0, 0, 320, articleImage.frame.size.height+5);
+		imageView.frame = CGRectMake(0, 0, 320, imageView.frame.size.height+10);
 		[mainScrollView insertSubview:imageView aboveSubview:mainContentView];
 		float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
 		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y +15, 320, rowHeight);

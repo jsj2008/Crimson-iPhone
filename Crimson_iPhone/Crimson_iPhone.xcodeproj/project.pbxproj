@@ -42,6 +42,7 @@
 		E5635D5613DC2DA7000DC94D /* NewsRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D5513DC2DA7000DC94D /* NewsRequestOperation.m */; };
 		E5635D6D13DC35E7000DC94D /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D6C13DC35E7000DC94D /* GTMNSString+HTML.m */; };
 		E5635D7213DC383D000DC94D /* NSDate+RelativeDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D7113DC383D000DC94D /* NSDate+RelativeDate.m */; };
+		E5646D5E13E17EA0005EF444 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5646D5D13E17EA0005EF444 /* libFlurry.a */; };
 		E57C8D3513DD83BE00B9D0DB /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C8D3413DD83BE00B9D0DB /* BaseModel.m */; };
 		E57C8D3813DD83F200B9D0DB /* NSObjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C8D3713DD83F200B9D0DB /* NSObjectAdditions.m */; };
 		E5847F7413DC9DC300772AF3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5847F7313DC9DC300772AF3 /* MessageUI.framework */; };
@@ -190,6 +191,11 @@
 		E5635D7013DC383D000DC94D /* NSDate+RelativeDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RelativeDate.h"; sourceTree = "<group>"; };
 		E5635D7113DC383D000DC94D /* NSDate+RelativeDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RelativeDate.m"; sourceTree = "<group>"; };
 		E5635D7713DC3971000DC94D /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		E5646D5913E17EA0005EF444 /* FlurryAdDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAdDelegate.h; sourceTree = "<group>"; };
+		E5646D5A13E17EA0005EF444 /* FlurryAPI+AppCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FlurryAPI+AppCircle.h"; sourceTree = "<group>"; };
+		E5646D5B13E17EA0005EF444 /* FlurryOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryOffer.h; sourceTree = "<group>"; };
+		E5646D5C13E17EA0005EF444 /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAPI.h; sourceTree = "<group>"; };
+		E5646D5D13E17EA0005EF444 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		E57C8D3313DD83BE00B9D0DB /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		E57C8D3413DD83BE00B9D0DB /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		E57C8D3613DD83F200B9D0DB /* NSObjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectAdditions.h; sourceTree = "<group>"; };
@@ -370,6 +376,7 @@
 				E50C934B13DD5974005DDE8B /* libobjc.A.dylib in Frameworks */,
 				E53BA2E013DE1B080098761C /* libxml2.dylib in Frameworks */,
 				E586338813DF21F700EB552C /* Security.framework in Frameworks */,
+				E5646D5E13E17EA0005EF444 /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +545,7 @@
 		E556582413DB17E600479193 /* Support Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E5646D5713E17EA0005EF444 /* FlurryLib */,
 				E586369113DF637500EB552C /* Social Media */,
 				E53BA2C813DE1A780098761C /* HTML Parsing */,
 				E584906113DCD1710034CF5C /* ASIHttpRequest */,
@@ -605,6 +613,26 @@
 				E5635D7713DC3971000DC94D /* GTMDefines.h */,
 			);
 			name = "HTML String Helpers";
+			sourceTree = "<group>";
+		};
+		E5646D5713E17EA0005EF444 /* FlurryLib */ = {
+			isa = PBXGroup;
+			children = (
+				E5646D5813E17EA0005EF444 /* AppCircle */,
+				E5646D5C13E17EA0005EF444 /* FlurryAPI.h */,
+				E5646D5D13E17EA0005EF444 /* libFlurry.a */,
+			);
+			path = FlurryLib;
+			sourceTree = "<group>";
+		};
+		E5646D5813E17EA0005EF444 /* AppCircle */ = {
+			isa = PBXGroup;
+			children = (
+				E5646D5913E17EA0005EF444 /* FlurryAdDelegate.h */,
+				E5646D5A13E17EA0005EF444 /* FlurryAPI+AppCircle.h */,
+				E5646D5B13E17EA0005EF444 /* FlurryOffer.h */,
+			);
+			path = AppCircle;
 			sourceTree = "<group>";
 		};
 		E584906113DCD1710034CF5C /* ASIHttpRequest */ = {
@@ -1187,7 +1215,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Crimson_iPhone_Prefix.pch;
 				INFOPLIST_FILE = "Crimson_iPhone-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/FlurryLib\"",
+				);
 				PRODUCT_NAME = Crimson_iPhone;
+				SDKROOT = iphoneos4.2;
 			};
 			name = Debug;
 		};
@@ -1199,7 +1232,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Crimson_iPhone_Prefix.pch;
 				INFOPLIST_FILE = "Crimson_iPhone-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/FlurryLib\"",
+				);
 				PRODUCT_NAME = Crimson_iPhone;
+				SDKROOT = iphoneos4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1213,6 +1251,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
@@ -1228,6 +1267,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;

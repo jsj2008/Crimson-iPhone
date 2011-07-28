@@ -39,14 +39,14 @@
 
 
 // Delicious - https://developer.apps.yahoo.com/projects
-#define SHKDeliciousConsumerKey		@"dj0yJmk9dG5raG8yRWt6bXI5JmQ9WVdrOVFrOXVUMjFhTkhNbWNHbzlNalkwTWpnd01UWXkmcz1jb25zdW1lcnNlY3JldCZ4PTU0"
-#define SHKDeliciousSecretKey		@"d9f64fa7bdec2fd1737e473174dcaac51dfc58a6"
+#define SHKDeliciousConsumerKey		@"dj0yJmk9NU9RRnN2ajZHeW4yJmQ9WVdrOVJYRTRNSGh3TjJzbWNHbzlNVFEyTURZMk1EYzJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD04ZQ--"
+#define SHKDeliciousSecretKey		@"36e7cfc73bc5ac708db93abb267b488ec7b59f59"
 
 // Facebook - http://www.facebook.com/developers
 // If SHKFacebookUseSessionProxy is enabled then SHKFacebookSecret is ignored and should be left blank
 
 #define SHKFacebookUseSessionProxy  NO 
-#define SHKFacebookKey				@""
+#define SHKFacebookKey				@"189714794423328"
 #define SHKFacebookSecret			@"08a6268a751b1ccba78bfded7d25d2ce "
 #define SHKFacebookSessionProxyURL  @""
 
@@ -69,11 +69,11 @@
  2. 'Application Type' should be set to BROWSER (not client)
  3. 'Callback URL' should match whatever you enter in SHKTwitterCallbackUrl.  The callback url doesn't have to be an actual existing url.  The user will never get to it because ShareKit intercepts it before the user is redirected.  It just needs to match.
  */
-#define SHKTwitterConsumerKey		@""
-#define SHKTwitterSecret			@""
-#define SHKTwitterCallbackUrl		@"" // You need to set this if using OAuth, see note above (xAuth users can skip it)
+#define SHKTwitterConsumerKey		@"UMbXFk4ZBpMMMmlKwl03gw"
+#define SHKTwitterSecret			@"80KCEZvLJWfRsyeyhXbjK9GnSqjWhyrRoiz1cCM"
+#define SHKTwitterCallbackUrl		@"http://www.thecrimson.com" // You need to set this if using OAuth, see note above (xAuth users can skip it)
 #define SHKTwitterUseXAuth			0 // To use xAuth, set to 1
-#define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+#define SHKTwitterUsername			@"thecrimson" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
 // Bit.ly (for shortening URLs on Twitter) - http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key
 #define SHKBitLyLogin				@"thcit"
