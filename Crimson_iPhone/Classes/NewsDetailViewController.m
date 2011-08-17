@@ -58,11 +58,6 @@
 	[self initialiseView];
 	self.navigationController.navigationBarHidden = NO;
 	self.navigationController.navigationBar.backItem.title = @"Back";  
-	self.navigationController.navigationBar.tintColor = [UIColor 
-														 colorWithRed:0.0/255 
-														 green:0.0/255 
-														 blue:0.0/255 
-														 alpha:1];
 }
 
 
@@ -116,11 +111,8 @@
 -(void)initialiseView {
 	NSString *logMsg = [NSString stringWithFormat:@"Viewed article: %@", theNewsItem.title];
 	[FlurryAPI logEvent:logMsg];
-	shareBar = [UIToolbar new];
-	shareBar.barStyle = UIBarStyleBlack;
-	[shareBar sizeToFit];
 	titleLabel.backgroundColor = [UIColor clearColor];
-	[titleLabel setTitleWithFlexibleHeight:theNewsItem.title];
+	[titleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:280];
 	CGRect newFrame = authorLabel.frame;
 	newFrame.origin.y = titleLabel.frame.origin.y + titleLabel.frame.size.height-2;
 	authorLabel.frame = newFrame;
@@ -139,7 +131,7 @@
 			[articleImage setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		imageView.backgroundColor = [UIColor clearColor];
-		imageView.frame = CGRectMake(0, 0, 320, imageView.frame.size.height+10);
+		imageView.frame = CGRectMake(0, 0, 320, articleImage.frame.size.height+10);
 		[mainScrollView insertSubview:imageView aboveSubview:mainContentView];
 		float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
 		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y +15, 320, rowHeight);
@@ -156,25 +148,24 @@
 	[contentWebView setOpaque:NO];
 	NSError * error = nil;
 	NSString *link = [NSString stringWithFormat:@"%@", theNewsItem.link];
+	// Hopefully will have article text actually in the xml feed so we won't have to parse HTML
 	HTMLParser * parser = [[HTMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:link] error:&error];
 	if (error) {
-		NSLog(@"Error: %@", error);
-		return;
+		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", theNewsItem.description] baseURL:nil];
 	}
-	HTMLNode *bodyNode = [parser body];
-	NSArray *divNodes = [bodyNode findChildTags:@"div"];
-	NSString *articleText = nil;
-	for (HTMLNode *divNode in divNodes) {
-		if ([[divNode getAttributeNamed:@"class"] isEqualToString:@"text"]) {
-			articleText = rawContentsOfNode(divNode -> _node);
+	else {
+		HTMLNode *bodyNode = [parser body];
+		NSArray *divNodes = [bodyNode findChildTags:@"div"];
+		NSString *articleText = nil;
+		for (HTMLNode *divNode in divNodes) {
+			if ([[divNode getAttributeNamed:@"class"] isEqualToString:@"text"]) {
+				articleText = rawContentsOfNode(divNode -> _node);
+			}
 		}
+		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
 	}
-	//Load the request in the UIWebView.
-	[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
 	[parser release];
 	[mainScrollView insertSubview:contentWebView belowSubview:mainContentView];
-	
-	[mainScrollView addSubview:shareBar];
 }
 
 -(NSString *)stringNameForSection:(Section)theSection {
@@ -235,11 +226,6 @@
 	theFrame.origin.y = mainContentView.frame.size.height + mainContentView.frame.origin.y - 20;
 	contentWebView.frame = theFrame;
 	
-	//Reposition share button
-	theFrame = shareBar.frame;
-	theFrame.origin.x = ((320-theFrame.size.width)/2);
-	theFrame.origin.y = contentWebView.frame.origin.y + contentWebView.frame.size.height;
-	shareBar.frame = theFrame;
 	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 	shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(buttonPressed:)];
 	NSArray *items = [NSArray arrayWithObjects: flexibleSpace, shareButton, flexibleSpace, nil];

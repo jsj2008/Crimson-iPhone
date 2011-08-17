@@ -15,6 +15,9 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		E500A9A213FC21D9004A8FD6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E500A9A113FC21D9004A8FD6 /* Default@2x.png */; };
+		E500A9A713FC2282004A8FD6 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E500A9A613FC2282004A8FD6 /* icon@2x.png */; };
+		E500A9A913FC2391004A8FD6 /* icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = E500A9A813FC2391004A8FD6 /* icon-512.png */; };
 		E50C934B13DD5974005DDE8B /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E50C934A13DD5974005DDE8B /* libobjc.A.dylib */; };
 		E525ABA513D9D52E00203B4C /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525ABA313D9D52E00203B4C /* NewsDetailViewController.m */; };
 		E525ABA613D9D52E00203B4C /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525ABA413D9D52E00203B4C /* NewsDetailViewController.xib */; };
@@ -34,6 +37,8 @@
 		E55658C313DB1D4000479193 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = E55658BB13DB1D4000479193 /* SDWebImageDownloader.m */; };
 		E55658C413DB1D4000479193 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E55658BE13DB1D4000479193 /* SDWebImageManager.m */; };
 		E55658C513DB1D4000479193 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E55658C113DB1D4000479193 /* UIImageView+WebCache.m */; };
+		E55B7DF813FB82C800AED455 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E55B7DF713FB82C800AED455 /* Default.png */; };
+		E55B7DFC13FB83AD00AED455 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E55B7DFB13FB83AD00AED455 /* icon.png */; };
 		E5635CE913DC21F6000DC94D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635CE613DC21F6000DC94D /* NSDataAdditions.m */; };
 		E5635CEA13DC21F6000DC94D /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635CE813DC21F6000DC94D /* TBXML.m */; };
 		E5635CFD13DC22E5000DC94D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E5635CFC13DC22E5000DC94D /* libz.dylib */; };
@@ -129,7 +134,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Crimson_iPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crimson_iPhoneAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Crimson_iPhoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crimson_iPhoneAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Crimson_iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crimson_iPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Harvard Crimson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Harvard Crimson.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -138,6 +143,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* Crimson_iPhone_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crimson_iPhone_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Crimson_iPhone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Crimson_iPhone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E500A9A113FC21D9004A8FD6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E500A9A613FC2282004A8FD6 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E500A9A813FC2391004A8FD6 /* icon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-512.png"; sourceTree = "<group>"; };
 		E50C934A13DD5974005DDE8B /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
 		E525ABA213D9D52E00203B4C /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		E525ABA313D9D52E00203B4C /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
@@ -174,6 +182,8 @@
 		E55658BF13DB1D4000479193 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
 		E55658C013DB1D4000479193 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		E55658C113DB1D4000479193 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		E55B7DF713FB82C800AED455 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E55B7DFB13FB83AD00AED455 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E5635CE513DC21F6000DC94D /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		E5635CE613DC21F6000DC94D /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		E5635CE713DC21F6000DC94D /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
@@ -398,7 +408,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Crimson_iPhone.app */,
+				1D6058910D05DD3D006BFB54 /* Harvard Crimson.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -452,6 +462,25 @@
 				E586338713DF21F700EB552C /* Security.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E500A9A313FC21F5004A8FD6 /* App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				E500A9A813FC2391004A8FD6 /* icon-512.png */,
+				E500A9A613FC2282004A8FD6 /* icon@2x.png */,
+				E55B7DFB13FB83AD00AED455 /* icon.png */,
+			);
+			name = "App Icons";
+			sourceTree = "<group>";
+		};
+		E500A9A413FC21FC004A8FD6 /* Splash Images */ = {
+			isa = PBXGroup;
+			children = (
+				E500A9A113FC21D9004A8FD6 /* Default@2x.png */,
+				E55B7DF713FB82C800AED455 /* Default.png */,
+			);
+			name = "Splash Images";
 			sourceTree = "<group>";
 		};
 		E525AB8813D9D39600203B4C /* App Classes */ = {
@@ -534,6 +563,8 @@
 		E55657FA13DB113E00479193 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E500A9A413FC21FC004A8FD6 /* Splash Images */,
+				E500A9A313FC21F5004A8FD6 /* App Icons */,
 				E584803613DCAA9000772AF3 /* seal_background.png */,
 				E556583113DB195000479193 /* grey_seal.png */,
 				E55657FD13DB117900479193 /* table_hr@2x.png */,
@@ -1054,7 +1085,7 @@
 			);
 			name = Crimson_iPhone;
 			productName = Crimson_iPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* Crimson_iPhone.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Harvard Crimson.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1095,6 +1126,11 @@
 				E584803713DCAA9000772AF3 /* seal_background.png in Resources */,
 				E586373213DF638C00EB552C /* SHKSharers.plist in Resources */,
 				E586374F13DF638C00EB552C /* FBConnect.bundle in Resources */,
+				E55B7DF813FB82C800AED455 /* Default.png in Resources */,
+				E55B7DFC13FB83AD00AED455 /* icon.png in Resources */,
+				E500A9A213FC21D9004A8FD6 /* Default@2x.png in Resources */,
+				E500A9A713FC2282004A8FD6 /* icon@2x.png in Resources */,
+				E500A9A913FC2391004A8FD6 /* icon-512.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1219,7 +1255,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
 				);
-				PRODUCT_NAME = Crimson_iPhone;
+				PRODUCT_NAME = "Harvard Crimson";
 				SDKROOT = iphoneos4.2;
 			};
 			name = Debug;
@@ -1236,7 +1272,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
 				);
-				PRODUCT_NAME = Crimson_iPhone;
+				PRODUCT_NAME = "Harvard Crimson";
 				SDKROOT = iphoneos4.2;
 				VALIDATE_PRODUCT = YES;
 			};

@@ -6,14 +6,6 @@
 //  Copyright 2011 Harvard. All rights reserved.
 //
 
-//
-//  RequestOperation.m
-//  Playstation
-//
-//  Created by Ben Chester on 26/04/2010.
-//  Copyright 2010 Digital Jigsaw Ltd. All rights reserved.
-//
-
 #import "RequestOperation.h"
 #import "TBXML.h"
 #import "BGThreadProcesser.h"
@@ -75,8 +67,6 @@
 		NSLog(@"feedURL not set for %@",  [[self class] description]);
 		return;
 	}
-	
-	NSLog(@"\nFeed name: %@\nFeed URL: %@", self.feedName, self.feedURL);
 	
 	//Process
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -254,7 +244,7 @@
 
 -(void)setExpiryDateWithTotalDaysAfterNow:(NSInteger)totalDays {
 	// setup current date - ignoring hours, mins, seconds so it is rounded down to start of day
-	NSInteger		 compFlags  = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
+	NSInteger compFlags  = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
 	NSDateComponents *todayDateComps = [[NSCalendar currentCalendar] components:compFlags fromDate:[NSDate date]];	
 	
 	// setup expiry date

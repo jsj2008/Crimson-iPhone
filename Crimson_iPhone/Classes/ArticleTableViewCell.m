@@ -95,13 +95,13 @@ static UIImage *separatorImage = nil;
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		newsTitleLabel.frame = kNewsTitleLabelFrame;
-		[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title];
+		[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:227];
 		descriptionLabel.frame = kDescriptionLabelFrame;
 	}
 	else {
 		thumbnailImageView.frame = kNoThumbImageFrame;
 		newsTitleLabel.frame = kNewsTitleNoImageLabelFrame;
-		[newsTitleLabel setTextWithFlexibleHeightWithNoImage:theNewsItem.title];
+		[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:303];
 		descriptionLabel.frame = kDescriptionNoImgLabelFrame;
 	}
 	[descriptionLabel setText:theNewsItem.description];
@@ -121,7 +121,7 @@ static UIImage *separatorImage = nil;
 	UILabel *newsTitleLabel = [[self class] newsTitleLabelBuilder];
 	UILabel *descriptionLabel = [[self class] descriptionLabelBuilder];
 	UIImageView *separatorImageView = [[self class] separatorImageViewBuilder];
-	[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title];
+	[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:227];
 	[descriptionLabel setText:theNewsItem.description];
 	float totalHeight;
 	totalHeight = newsTitleLabel.frame.size.height + descriptionLabel.frame.size.height + separatorImageView.frame.size.height + kDescriptionLabelPadding + kSeparatorPadding + kTopPadding;

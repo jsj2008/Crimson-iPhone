@@ -73,7 +73,7 @@
 #define SHKTwitterSecret			@"80KCEZvLJWfRsyeyhXbjK9GnSqjWhyrRoiz1cCM"
 #define SHKTwitterCallbackUrl		@"http://www.thecrimson.com" // You need to set this if using OAuth, see note above (xAuth users can skip it)
 #define SHKTwitterUseXAuth			0 // To use xAuth, set to 1
-#define SHKTwitterUsername			@"thecrimson" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
+#define SHKTwitterUsername			@"" // Enter your app's twitter account if you'd like to ask the user to follow it when logging in. (Only for xAuth)
 
 // Bit.ly (for shortening URLs on Twitter) - http://bit.ly/account/register - after signup: http://bit.ly/a/your_api_key
 #define SHKBitLyLogin				@"thcit"

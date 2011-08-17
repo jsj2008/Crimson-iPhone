@@ -25,12 +25,10 @@
 @synthesize section;
 
 +(id)operationWithSection:(Section)theSection {
-	NSLog(@"Operating with section");
 	return [[[[self class] alloc]initWithSection:theSection]autorelease];
 }
 
 -(id)initWithSection:(Section)theSection{
-	NSLog(@"Initializing with Section");
 	self = [super initWithRequestType:eRequestTypeCachedFirst];
 	if (self) {
 		self.section = theSection;
@@ -42,7 +40,6 @@
 }
 
 -(void)parseResponse {
-	NSLog(@"Attempting to parse response");
 	if (xmlDocument) {
 		TBXMLElement *root = xmlDocument.rootXMLElement;
 		if (root) {
@@ -81,6 +78,7 @@
 						} while(childElement != nil);
 						theNewsItem.section = section;
 						[self.resultArray addObject:theNewsItem];
+						//theNewsItem = nil;
 						[theNewsItem release];
 						itemElement = itemElement -> nextSibling;
 					} while(itemElement != nil);
@@ -91,7 +89,6 @@
 }
 
 -(void)sortResults {
-	NSLog(@"Sorting results");
 	NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:@"pubDate" ascending:NO];
 	if ([self.resultArray count] > 0) {
 		[self.resultArray sortUsingDescriptors:[NSArray arrayWithObject:sortDesc]];
@@ -100,7 +97,6 @@
 }
 
 -(void)requestFinished {
-	NSLog(@"Called requestFinished");
 	[self sortResults];
 	if ([self.resultArray count]) {
 		[self setCachedData:self.resultArray];
@@ -144,7 +140,6 @@
 	NSString *returnURL = nil;
 	
 	returnURL = [NSString stringWithFormat:@"%@%@",FEED_BASE_URL, sectionString];
-	NSLog(@"URL:%@",returnURL);
 	return returnURL;
 }
 
