@@ -16,13 +16,13 @@
 	UILabel *newsTitleLabel;
 	UILabel *descriptionLabel;
 	UIImageView *thumbnailImageView;
-	UIImageView *separatorImageView;
+	//UIImageView *separatorImageView;
 }
 
 @property(nonatomic, retain) UILabel *newsTitleLabel;
 @property(nonatomic, retain) UILabel *descriptionLabel;
 @property(nonatomic, retain) UIImageView *thumbnailImageView;
-@property(nonatomic, retain) UIImageView *separatorImageView;
+//@property(nonatomic, retain) UIImageView *separatorImageView;
 
 -(void)configureWithNewsItem:(NewsItem *)theNewsItem;
 +(float)rowHeight:(NewsItem *)theNewsItem;

@@ -8,6 +8,7 @@
 
 #import "Crimson_iPhoneAppDelegate.h"
 #import "FlurryAPI.h"
+#import "SHKFacebook.h"
 
 @implementation UINavigationBar (UINavigationBarCategory)
 
@@ -73,6 +74,20 @@
  */
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self saveContext];
+}
+
+- (BOOL)application:(UIApplication *)application 
+            openURL:(NSURL *)url 
+  sourceApplication:(NSString *)sourceApplication 
+         annotation:(id)annotation 
+{
+	return [SHKFacebook handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application 
+      handleOpenURL:(NSURL *)url 
+{
+	return [SHKFacebook handleOpenURL:url];
 }
 
 

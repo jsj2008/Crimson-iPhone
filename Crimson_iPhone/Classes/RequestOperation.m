@@ -124,7 +124,6 @@
 				self.requestErrorDesc = @"Communication Error";
 			}		
 		}
-		
 		[self requestFinished];
 	}
 	
@@ -144,6 +143,7 @@
 
 - (void)requestFinished {
 	//Override with sub class
+	[self setCachedData:self.resultArray];
 }
 
 -(BOOL)getBoolValue:(NSString*)theString 

@@ -99,19 +99,6 @@
 		E586374C13DF638C00EB552C /* SHKSafari.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636E213DF638C00EB552C /* SHKSafari.m */; };
 		E586374D13DF638C00EB552C /* SHKPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636E513DF638C00EB552C /* SHKPhotoAlbum.m */; };
 		E586374E13DF638C00EB552C /* SHKDelicious.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636E913DF638C00EB552C /* SHKDelicious.m */; };
-		E586374F13DF638C00EB552C /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E58636EC13DF638C00EB552C /* FBConnect.bundle */; };
-		E586375013DF638C00EB552C /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636EF13DF638C00EB552C /* FBConnectGlobal.m */; };
-		E586375113DF638C00EB552C /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636F113DF638C00EB552C /* FBDialog.m */; };
-		E586375213DF638C00EB552C /* FBFeedDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636F313DF638C00EB552C /* FBFeedDialog.m */; };
-		E586375313DF638C00EB552C /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636F513DF638C00EB552C /* FBLoginButton.m */; };
-		E586375413DF638C00EB552C /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636F713DF638C00EB552C /* FBLoginDialog.m */; };
-		E586375513DF638C00EB552C /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636F913DF638C00EB552C /* FBPermissionDialog.m */; };
-		E586375613DF638C00EB552C /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636FB13DF638C00EB552C /* FBRequest.m */; };
-		E586375713DF638C00EB552C /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636FD13DF638C00EB552C /* FBSession.m */; };
-		E586375813DF638C00EB552C /* FBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E58636FF13DF638C00EB552C /* FBStreamDialog.m */; };
-		E586375913DF638C00EB552C /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E586370113DF638C00EB552C /* FBXMLHandler.m */; };
-		E586375A13DF638C00EB552C /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E586370313DF638C00EB552C /* SHKFacebook.m */; };
-		E586375B13DF638C00EB552C /* SHKFBStreamDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E586370513DF638C00EB552C /* SHKFBStreamDialog.m */; };
 		E586375C13DF638C00EB552C /* SHKGoogleReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E586370813DF638C00EB552C /* SHKGoogleReader.m */; };
 		E586375D13DF638C00EB552C /* SHKInstapaper.m in Sources */ = {isa = PBXBuildFile; fileRef = E586370B13DF638C00EB552C /* SHKInstapaper.m */; };
 		E586375E13DF638C00EB552C /* SHKPinboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E586370E13DF638C00EB552C /* SHKPinboard.m */; };
@@ -128,13 +115,25 @@
 		E586376913DF638C00EB552C /* SHKOAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = E586372813DF638C00EB552C /* SHKOAuthView.m */; };
 		E586376A13DF638C00EB552C /* SHKViewControllerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E586372A13DF638C00EB552C /* SHKViewControllerWrapper.m */; };
 		E586376B13DF638C00EB552C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E586372D13DF638C00EB552C /* Reachability.m */; };
+		E5D0C92713FE33D700E3EAC4 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C91E13FE33D700E3EAC4 /* Facebook.m */; };
+		E5D0C92813FE33D700E3EAC4 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5D0C92013FE33D700E3EAC4 /* FBDialog.bundle */; };
+		E5D0C92913FE33D700E3EAC4 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C92213FE33D700E3EAC4 /* FBDialog.m */; };
+		E5D0C92A13FE33D700E3EAC4 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C92413FE33D700E3EAC4 /* FBLoginDialog.m */; };
+		E5D0C92B13FE33D700E3EAC4 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C92613FE33D700E3EAC4 /* FBRequest.m */; };
+		E5D0C93C13FE33F500E3EAC4 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93113FE33F500E3EAC4 /* NSObject+SBJSON.m */; };
+		E5D0C93D13FE33F500E3EAC4 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93313FE33F500E3EAC4 /* NSString+SBJSON.m */; };
+		E5D0C93E13FE33F500E3EAC4 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93513FE33F500E3EAC4 /* SBJSON.m */; };
+		E5D0C93F13FE33F500E3EAC4 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93713FE33F500E3EAC4 /* SBJsonBase.m */; };
+		E5D0C94013FE33F500E3EAC4 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93913FE33F500E3EAC4 /* SBJsonParser.m */; };
+		E5D0C94113FE33F500E3EAC4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93B13FE33F500E3EAC4 /* SBJsonWriter.m */; };
+		E5D0C94413FE340A00E3EAC4 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C94313FE340A00E3EAC4 /* SHKFacebook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* Crimson_iPhoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crimson_iPhoneAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* Crimson_iPhoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crimson_iPhoneAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* Harvard Crimson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Harvard Crimson.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* The Crimson.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Crimson.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
@@ -309,32 +308,6 @@
 		E58636E513DF638C00EB552C /* SHKPhotoAlbum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKPhotoAlbum.m; sourceTree = "<group>"; };
 		E58636E813DF638C00EB552C /* SHKDelicious.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKDelicious.h; sourceTree = "<group>"; };
 		E58636E913DF638C00EB552C /* SHKDelicious.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKDelicious.m; sourceTree = "<group>"; };
-		E58636EC13DF638C00EB552C /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBConnect.bundle; sourceTree = "<group>"; };
-		E58636ED13DF638C00EB552C /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
-		E58636EE13DF638C00EB552C /* FBConnectGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnectGlobal.h; sourceTree = "<group>"; };
-		E58636EF13DF638C00EB552C /* FBConnectGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBConnectGlobal.m; sourceTree = "<group>"; };
-		E58636F013DF638C00EB552C /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
-		E58636F113DF638C00EB552C /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDialog.m; sourceTree = "<group>"; };
-		E58636F213DF638C00EB552C /* FBFeedDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedDialog.h; sourceTree = "<group>"; };
-		E58636F313DF638C00EB552C /* FBFeedDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFeedDialog.m; sourceTree = "<group>"; };
-		E58636F413DF638C00EB552C /* FBLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginButton.h; sourceTree = "<group>"; };
-		E58636F513DF638C00EB552C /* FBLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginButton.m; sourceTree = "<group>"; };
-		E58636F613DF638C00EB552C /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
-		E58636F713DF638C00EB552C /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginDialog.m; sourceTree = "<group>"; };
-		E58636F813DF638C00EB552C /* FBPermissionDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBPermissionDialog.h; sourceTree = "<group>"; };
-		E58636F913DF638C00EB552C /* FBPermissionDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBPermissionDialog.m; sourceTree = "<group>"; };
-		E58636FA13DF638C00EB552C /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
-		E58636FB13DF638C00EB552C /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequest.m; sourceTree = "<group>"; };
-		E58636FC13DF638C00EB552C /* FBSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSession.h; sourceTree = "<group>"; };
-		E58636FD13DF638C00EB552C /* FBSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSession.m; sourceTree = "<group>"; };
-		E58636FE13DF638C00EB552C /* FBStreamDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBStreamDialog.h; sourceTree = "<group>"; };
-		E58636FF13DF638C00EB552C /* FBStreamDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBStreamDialog.m; sourceTree = "<group>"; };
-		E586370013DF638C00EB552C /* FBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXMLHandler.h; sourceTree = "<group>"; };
-		E586370113DF638C00EB552C /* FBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBXMLHandler.m; sourceTree = "<group>"; };
-		E586370213DF638C00EB552C /* SHKFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebook.h; sourceTree = "<group>"; };
-		E586370313DF638C00EB552C /* SHKFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebook.m; sourceTree = "<group>"; };
-		E586370413DF638C00EB552C /* SHKFBStreamDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFBStreamDialog.h; sourceTree = "<group>"; };
-		E586370513DF638C00EB552C /* SHKFBStreamDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFBStreamDialog.m; sourceTree = "<group>"; };
 		E586370713DF638C00EB552C /* SHKGoogleReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKGoogleReader.h; sourceTree = "<group>"; };
 		E586370813DF638C00EB552C /* SHKGoogleReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKGoogleReader.m; sourceTree = "<group>"; };
 		E586370A13DF638C00EB552C /* SHKInstapaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKInstapaper.h; sourceTree = "<group>"; };
@@ -367,6 +340,32 @@
 		E586372A13DF638C00EB552C /* SHKViewControllerWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKViewControllerWrapper.m; sourceTree = "<group>"; };
 		E586372C13DF638C00EB552C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E586372D13DF638C00EB552C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E5D0C91D13FE33D700E3EAC4 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		E5D0C91E13FE33D700E3EAC4 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
+		E5D0C91F13FE33D700E3EAC4 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		E5D0C92013FE33D700E3EAC4 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		E5D0C92113FE33D700E3EAC4 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		E5D0C92213FE33D700E3EAC4 /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBDialog.m; sourceTree = "<group>"; };
+		E5D0C92313FE33D700E3EAC4 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		E5D0C92413FE33D700E3EAC4 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginDialog.m; sourceTree = "<group>"; };
+		E5D0C92513FE33D700E3EAC4 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		E5D0C92613FE33D700E3EAC4 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequest.m; sourceTree = "<group>"; };
+		E5D0C92F13FE33F400E3EAC4 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		E5D0C93013FE33F500E3EAC4 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		E5D0C93113FE33F500E3EAC4 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		E5D0C93213FE33F500E3EAC4 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		E5D0C93313FE33F500E3EAC4 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		E5D0C93413FE33F500E3EAC4 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		E5D0C93513FE33F500E3EAC4 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		E5D0C93613FE33F500E3EAC4 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		E5D0C93713FE33F500E3EAC4 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		E5D0C93813FE33F500E3EAC4 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		E5D0C93913FE33F500E3EAC4 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		E5D0C93A13FE33F500E3EAC4 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		E5D0C93B13FE33F500E3EAC4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		E5D0C94213FE340A00E3EAC4 /* SHKFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebook.h; sourceTree = "<group>"; };
+		E5D0C94313FE340A00E3EAC4 /* SHKFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebook.m; sourceTree = "<group>"; };
+		E5D0C98613FE3C5200E3EAC4 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,7 +407,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* Harvard Crimson.app */,
+				1D6058910D05DD3D006BFB54 /* The Crimson.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,6 +420,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				E5D0C98613FE3C5200E3EAC4 /* Entitlements.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -918,8 +918,8 @@
 		E58636E613DF638C00EB552C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E5D0C91A13FE33A400E3EAC4 /* Facebook */,
 				E58636E713DF638C00EB552C /* Delicious */,
-				E58636EA13DF638C00EB552C /* Facebook */,
 				E586370613DF638C00EB552C /* Google Reader */,
 				E586370913DF638C00EB552C /* Instapaper */,
 				E586370C13DF638C00EB552C /* Pinboard */,
@@ -937,47 +937,6 @@
 				E58636E913DF638C00EB552C /* SHKDelicious.m */,
 			);
 			path = Delicious;
-			sourceTree = "<group>";
-		};
-		E58636EA13DF638C00EB552C /* Facebook */ = {
-			isa = PBXGroup;
-			children = (
-				E58636EB13DF638C00EB552C /* FBConnect */,
-				E586370213DF638C00EB552C /* SHKFacebook.h */,
-				E586370313DF638C00EB552C /* SHKFacebook.m */,
-				E586370413DF638C00EB552C /* SHKFBStreamDialog.h */,
-				E586370513DF638C00EB552C /* SHKFBStreamDialog.m */,
-			);
-			path = Facebook;
-			sourceTree = "<group>";
-		};
-		E58636EB13DF638C00EB552C /* FBConnect */ = {
-			isa = PBXGroup;
-			children = (
-				E58636EC13DF638C00EB552C /* FBConnect.bundle */,
-				E58636ED13DF638C00EB552C /* FBConnect.h */,
-				E58636EE13DF638C00EB552C /* FBConnectGlobal.h */,
-				E58636EF13DF638C00EB552C /* FBConnectGlobal.m */,
-				E58636F013DF638C00EB552C /* FBDialog.h */,
-				E58636F113DF638C00EB552C /* FBDialog.m */,
-				E58636F213DF638C00EB552C /* FBFeedDialog.h */,
-				E58636F313DF638C00EB552C /* FBFeedDialog.m */,
-				E58636F413DF638C00EB552C /* FBLoginButton.h */,
-				E58636F513DF638C00EB552C /* FBLoginButton.m */,
-				E58636F613DF638C00EB552C /* FBLoginDialog.h */,
-				E58636F713DF638C00EB552C /* FBLoginDialog.m */,
-				E58636F813DF638C00EB552C /* FBPermissionDialog.h */,
-				E58636F913DF638C00EB552C /* FBPermissionDialog.m */,
-				E58636FA13DF638C00EB552C /* FBRequest.h */,
-				E58636FB13DF638C00EB552C /* FBRequest.m */,
-				E58636FC13DF638C00EB552C /* FBSession.h */,
-				E58636FD13DF638C00EB552C /* FBSession.m */,
-				E58636FE13DF638C00EB552C /* FBStreamDialog.h */,
-				E58636FF13DF638C00EB552C /* FBStreamDialog.m */,
-				E586370013DF638C00EB552C /* FBXMLHandler.h */,
-				E586370113DF638C00EB552C /* FBXMLHandler.m */,
-			);
-			path = FBConnect;
 			sourceTree = "<group>";
 		};
 		E586370613DF638C00EB552C /* Google Reader */ = {
@@ -1068,6 +1027,54 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
+		E5D0C91A13FE33A400E3EAC4 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				E5D0C94213FE340A00E3EAC4 /* SHKFacebook.h */,
+				E5D0C94313FE340A00E3EAC4 /* SHKFacebook.m */,
+				E5D0C91B13FE33AB00E3EAC4 /* FBConnect */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
+		E5D0C91B13FE33AB00E3EAC4 /* FBConnect */ = {
+			isa = PBXGroup;
+			children = (
+				E5D0C92E13FE33DE00E3EAC4 /* JSON */,
+				E5D0C91D13FE33D700E3EAC4 /* Facebook.h */,
+				E5D0C91E13FE33D700E3EAC4 /* Facebook.m */,
+				E5D0C91F13FE33D700E3EAC4 /* FBConnect.h */,
+				E5D0C92013FE33D700E3EAC4 /* FBDialog.bundle */,
+				E5D0C92113FE33D700E3EAC4 /* FBDialog.h */,
+				E5D0C92213FE33D700E3EAC4 /* FBDialog.m */,
+				E5D0C92313FE33D700E3EAC4 /* FBLoginDialog.h */,
+				E5D0C92413FE33D700E3EAC4 /* FBLoginDialog.m */,
+				E5D0C92513FE33D700E3EAC4 /* FBRequest.h */,
+				E5D0C92613FE33D700E3EAC4 /* FBRequest.m */,
+			);
+			name = FBConnect;
+			sourceTree = "<group>";
+		};
+		E5D0C92E13FE33DE00E3EAC4 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				E5D0C92F13FE33F400E3EAC4 /* JSON.h */,
+				E5D0C93013FE33F500E3EAC4 /* NSObject+SBJSON.h */,
+				E5D0C93113FE33F500E3EAC4 /* NSObject+SBJSON.m */,
+				E5D0C93213FE33F500E3EAC4 /* NSString+SBJSON.h */,
+				E5D0C93313FE33F500E3EAC4 /* NSString+SBJSON.m */,
+				E5D0C93413FE33F500E3EAC4 /* SBJSON.h */,
+				E5D0C93513FE33F500E3EAC4 /* SBJSON.m */,
+				E5D0C93613FE33F500E3EAC4 /* SBJsonBase.h */,
+				E5D0C93713FE33F500E3EAC4 /* SBJsonBase.m */,
+				E5D0C93813FE33F500E3EAC4 /* SBJsonParser.h */,
+				E5D0C93913FE33F500E3EAC4 /* SBJsonParser.m */,
+				E5D0C93A13FE33F500E3EAC4 /* SBJsonWriter.h */,
+				E5D0C93B13FE33F500E3EAC4 /* SBJsonWriter.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1085,7 +1092,7 @@
 			);
 			name = Crimson_iPhone;
 			productName = Crimson_iPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* Harvard Crimson.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* The Crimson.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1125,12 +1132,12 @@
 				E556583213DB195000479193 /* grey_seal.png in Resources */,
 				E584803713DCAA9000772AF3 /* seal_background.png in Resources */,
 				E586373213DF638C00EB552C /* SHKSharers.plist in Resources */,
-				E586374F13DF638C00EB552C /* FBConnect.bundle in Resources */,
 				E55B7DF813FB82C800AED455 /* Default.png in Resources */,
 				E55B7DFC13FB83AD00AED455 /* icon.png in Resources */,
 				E500A9A213FC21D9004A8FD6 /* Default@2x.png in Resources */,
 				E500A9A713FC2282004A8FD6 /* icon@2x.png in Resources */,
 				E500A9A913FC2391004A8FD6 /* icon-512.png in Resources */,
+				E5D0C92813FE33D700E3EAC4 /* FBDialog.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1207,18 +1214,6 @@
 				E586374C13DF638C00EB552C /* SHKSafari.m in Sources */,
 				E586374D13DF638C00EB552C /* SHKPhotoAlbum.m in Sources */,
 				E586374E13DF638C00EB552C /* SHKDelicious.m in Sources */,
-				E586375013DF638C00EB552C /* FBConnectGlobal.m in Sources */,
-				E586375113DF638C00EB552C /* FBDialog.m in Sources */,
-				E586375213DF638C00EB552C /* FBFeedDialog.m in Sources */,
-				E586375313DF638C00EB552C /* FBLoginButton.m in Sources */,
-				E586375413DF638C00EB552C /* FBLoginDialog.m in Sources */,
-				E586375513DF638C00EB552C /* FBPermissionDialog.m in Sources */,
-				E586375613DF638C00EB552C /* FBRequest.m in Sources */,
-				E586375713DF638C00EB552C /* FBSession.m in Sources */,
-				E586375813DF638C00EB552C /* FBStreamDialog.m in Sources */,
-				E586375913DF638C00EB552C /* FBXMLHandler.m in Sources */,
-				E586375A13DF638C00EB552C /* SHKFacebook.m in Sources */,
-				E586375B13DF638C00EB552C /* SHKFBStreamDialog.m in Sources */,
 				E586375C13DF638C00EB552C /* SHKGoogleReader.m in Sources */,
 				E586375D13DF638C00EB552C /* SHKInstapaper.m in Sources */,
 				E586375E13DF638C00EB552C /* SHKPinboard.m in Sources */,
@@ -1235,6 +1230,17 @@
 				E586376913DF638C00EB552C /* SHKOAuthView.m in Sources */,
 				E586376A13DF638C00EB552C /* SHKViewControllerWrapper.m in Sources */,
 				E586376B13DF638C00EB552C /* Reachability.m in Sources */,
+				E5D0C92713FE33D700E3EAC4 /* Facebook.m in Sources */,
+				E5D0C92913FE33D700E3EAC4 /* FBDialog.m in Sources */,
+				E5D0C92A13FE33D700E3EAC4 /* FBLoginDialog.m in Sources */,
+				E5D0C92B13FE33D700E3EAC4 /* FBRequest.m in Sources */,
+				E5D0C93C13FE33F500E3EAC4 /* NSObject+SBJSON.m in Sources */,
+				E5D0C93D13FE33F500E3EAC4 /* NSString+SBJSON.m in Sources */,
+				E5D0C93E13FE33F500E3EAC4 /* SBJSON.m in Sources */,
+				E5D0C93F13FE33F500E3EAC4 /* SBJsonBase.m in Sources */,
+				E5D0C94013FE33F500E3EAC4 /* SBJsonParser.m in Sources */,
+				E5D0C94113FE33F500E3EAC4 /* SBJsonWriter.m in Sources */,
+				E5D0C94413FE340A00E3EAC4 /* SHKFacebook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1245,6 +1251,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Crimson-iPhone/Crimson_iPhone/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1255,7 +1262,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
 				);
-				PRODUCT_NAME = "Harvard Crimson";
+				PRODUCT_NAME = "The Crimson";
 				SDKROOT = iphoneos4.2;
 			};
 			name = Debug;
@@ -1264,6 +1271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Crimson-iPhone/Crimson_iPhone/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Crimson_iPhone_Prefix.pch;
@@ -1272,7 +1280,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
 				);
-				PRODUCT_NAME = "Harvard Crimson";
+				PRODUCT_NAME = "The Crimson";
 				SDKROOT = iphoneos4.2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1311,6 +1319,44 @@
 			};
 			name = Release;
 		};
+		E54A475B13FCEFD400C9856A /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-lxml2";
+				PREBINDING = NO;
+				SDKROOT = iphoneos;
+			};
+			name = "Ad Hoc";
+		};
+		E54A475C13FCEFD400C9856A /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Crimson-iPhone/Crimson_iPhone/Entitlements.plist";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: The Harvard Crimson, Inc.";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Crimson_iPhone_Prefix.pch;
+				INFOPLIST_FILE = "Crimson_iPhone-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Classes/FlurryLib\"",
+				);
+				PRODUCT_NAME = "The Crimson";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6511D531-6A3F-4121-8807-52020F29472F";
+				SDKROOT = iphoneos4.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1319,6 +1365,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				E54A475C13FCEFD400C9856A /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1328,6 +1375,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				E54A475B13FCEFD400C9856A /* Ad Hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

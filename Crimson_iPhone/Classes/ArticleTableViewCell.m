@@ -13,10 +13,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define kTableViewCellFrame			CGRectMake(0,0,320, 71)
-#define kThumbImageFrame			CGRectMake(7, 7, 73, 57)
+#define kThumbImageFrame			CGRectMake(7, 7, 57, 57)
 #define kNoThumbImageFrame			CGRectMake(0, 0, 0, 0)
-#define kNewsTitleLabelFrame		CGRectMake(88, 5, 227, 0)
-#define kDescriptionLabelFrame		CGRectMake(88, 23, 227, 45)
+#define kNewsTitleLabelFrame		CGRectMake(72, 5, 227, 0)
+#define kDescriptionLabelFrame		CGRectMake(72, 23, 227, 45)
 #define kNewsTitleNoImageLabelFrame	CGRectMake(9, 5, 301, 0)
 #define kDescriptionNoImgLabelFrame	CGRectMake(9, 23, 301, 45)
 #define kSeparatorImageFrame		CGRectMake(5, 88, 320, 1)
@@ -24,7 +24,7 @@
 #define kTopPadding					5
 #define kSeparatorPadding			3
 
-static UIImage *separatorImage = nil;
+//static UIImage *separatorImage = nil;
 
 @interface ArticleTableViewCell(Private)
 
@@ -32,21 +32,21 @@ static UIImage *separatorImage = nil;
 -(void)clearCell;
 +(UILabel *)newsTitleLabelBuilder;
 +(UILabel *)descriptionLabelBuilder;
-+(UIImageView *)separatorImageViewBuilder;
+//+(UIImageView *)separatorImageViewBuilder;
 +(UIImageView *)thumbnailImageViewBuilder;
 
 @end
 
 @implementation ArticleTableViewCell
 
-@synthesize separatorImageView;
+//@synthesize separatorImageView;
 @synthesize newsTitleLabel;
 @synthesize thumbnailImageView;
 @synthesize descriptionLabel;
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-		separatorImage = [UIImage imageNamed:@"table_hr"];
+		//separatorImage = [UIImage imageNamed:@"table_hr"];
 		[self initialiseView];
 	}
 	return self;
@@ -61,7 +61,7 @@ static UIImage *separatorImage = nil;
 	[newsTitleLabel release];
 	[thumbnailImageView release];
 	[descriptionLabel release];
-	[separatorImageView release];
+	//[separatorImageView release];
 }
 
 -(void)initialiseView {
@@ -69,11 +69,11 @@ static UIImage *separatorImage = nil;
 	self.thumbnailImageView = [[[UIImageView alloc]initWithFrame:kThumbImageFrame]autorelease];
 	self.newsTitleLabel = [[self class]newsTitleLabelBuilder];
 	self.descriptionLabel = [[self class] descriptionLabelBuilder];
-	self.separatorImageView = [[self class]separatorImageViewBuilder];
+	//self.separatorImageView = [[self class]separatorImageViewBuilder];
 	[self addSubview:newsTitleLabel];
 	[self addSubview:thumbnailImageView];
 	[self addSubview:descriptionLabel];
-	[self addSubview:separatorImageView];
+	//[self addSubview:separatorImageView];
 }
 
 -(void)clearCell {
@@ -87,6 +87,8 @@ static UIImage *separatorImage = nil;
 	[self clearCell];
 	if (theNewsItem.thumbnailURL) {
 		thumbnailImageView.frame = kThumbImageFrame;
+		thumbnailImageView.contentMode = UIViewContentModeScaleAspectFill;
+		thumbnailImageView.layer.masksToBounds = YES;
 		if ([theNewsItem.thumbnailURL hasPrefix:HOME_URL]) {
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
@@ -95,7 +97,7 @@ static UIImage *separatorImage = nil;
 			[thumbnailImageView setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		newsTitleLabel.frame = kNewsTitleLabelFrame;
-		[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:227];
+		[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:243];
 		descriptionLabel.frame = kDescriptionLabelFrame;
 	}
 	else {
@@ -109,9 +111,11 @@ static UIImage *separatorImage = nil;
 	newFrame.origin.y = newsTitleLabel.frame.origin.y + newsTitleLabel.frame.size.height + kDescriptionLabelPadding;
 	descriptionLabel.frame = newFrame;
 	
+	/*
 	newFrame = separatorImageView.frame;
 	newFrame.origin.y = descriptionLabel.frame.origin.y + descriptionLabel.frame.size.height + kSeparatorPadding;
 	separatorImageView.frame = newFrame;
+	 */
 }
 
 #pragma mark -
@@ -120,16 +124,16 @@ static UIImage *separatorImage = nil;
 	CGRect cellFrame = kTableViewCellFrame;
 	UILabel *newsTitleLabel = [[self class] newsTitleLabelBuilder];
 	UILabel *descriptionLabel = [[self class] descriptionLabelBuilder];
-	UIImageView *separatorImageView = [[self class] separatorImageViewBuilder];
+	//UIImageView *separatorImageView = [[self class] separatorImageViewBuilder];
 	[newsTitleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:227];
 	[descriptionLabel setText:theNewsItem.description];
 	float totalHeight;
-	totalHeight = newsTitleLabel.frame.size.height + descriptionLabel.frame.size.height + separatorImageView.frame.size.height + kDescriptionLabelPadding + kSeparatorPadding + kTopPadding;
+	totalHeight = newsTitleLabel.frame.size.height + descriptionLabel.frame.size.height + kDescriptionLabelPadding + kTopPadding;
 	return totalHeight < cellFrame.size.height ? cellFrame.size.height : totalHeight;
 }
 
 +(UILabel *)newsTitleLabelBuilder {
-	UILabel *tmpNewsTitleLabel = tmpNewsTitleLabel = [[[UILabel alloc]initWithFrame:kNewsTitleLabelFrame]autorelease];;
+	UILabel *tmpNewsTitleLabel = [[[UILabel alloc]initWithFrame:kNewsTitleLabelFrame]autorelease];;
 	tmpNewsTitleLabel.numberOfLines = 0;
 	tmpNewsTitleLabel.lineBreakMode = UILineBreakModeWordWrap;
 	tmpNewsTitleLabel.textColor = [UIColor blackColor];
@@ -152,12 +156,12 @@ static UIImage *separatorImage = nil;
 	tmpDescriptionLabelBuilder.text = @"";
 	return tmpDescriptionLabelBuilder;
 }
-
+/*
 +(UIImageView *)separatorImageViewBuilder {
 	UIImageView *tmpSeparatorView = [[[UIImageView alloc]initWithFrame:kSeparatorImageFrame] autorelease];
 	tmpSeparatorView.contentMode = UIViewContentModeCenter;
 	tmpSeparatorView.image = separatorImage;
 	return tmpSeparatorView;
-}
+}*/
 
 @end

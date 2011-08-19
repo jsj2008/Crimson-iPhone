@@ -47,7 +47,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.contentWebView.userInteractionEnabled = NO;
+	self.contentWebView.userInteractionEnabled = YES;
 	UILabel *tmpTitleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 150, 30)] autorelease];
 	tmpTitleLabel.textAlignment = UITextAlignmentCenter;
 	tmpTitleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:20];
@@ -57,17 +57,14 @@
 	self.navigationItem.titleView = tmpTitleLabel;
 	[self initialiseView];
 	self.navigationController.navigationBarHidden = NO;
-	self.navigationController.navigationBar.backItem.title = @"Back";  
+	self.navigationController.navigationBar.backItem.title = @"Back"; 
 }
 
-
-/*
 // Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+/*- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Return YES for supported orientations
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -105,7 +102,7 @@
 	[contentWebView release];
 	[shareButton release];
 	[shareBar release];
-	[theNewsItem release];
+	//[theNewsItem release];
 }
 
 -(void)initialiseView {
@@ -148,10 +145,10 @@
 	[contentWebView setOpaque:NO];
 	NSError * error = nil;
 	NSString *link = [NSString stringWithFormat:@"%@", theNewsItem.link];
-	// Hopefully will have article text actually in the xml feed so we won't have to parse HTML
+	
 	HTMLParser * parser = [[HTMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:link] error:&error];
 	if (error) {
-		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", theNewsItem.description] baseURL:nil];
+		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><meta name='viewport' content='initial-scale=1.0,maximum-scale=10.0'/><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@<p>Connect to the Internet for full article text.</div></body></html>", theNewsItem.description] baseURL:nil];
 	}
 	else {
 		HTMLNode *bodyNode = [parser body];
@@ -162,7 +159,7 @@
 				articleText = rawContentsOfNode(divNode -> _node);
 			}
 		}
-		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
+		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><meta name='viewport' content='initial-scale=1.0,maximum-scale=10.0'/><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
 	}
 	[parser release];
 	[mainScrollView insertSubview:contentWebView belowSubview:mainContentView];
@@ -229,6 +226,7 @@
 	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 	shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(buttonPressed:)];
 	NSArray *items = [NSArray arrayWithObjects: flexibleSpace, shareButton, flexibleSpace, nil];
+	[flexibleSpace release];
 	[shareBar setItems:items animated:NO];
 	CGRect contentRect = CGRectZero;
 	for (UIView *view in [mainScrollView subviews])

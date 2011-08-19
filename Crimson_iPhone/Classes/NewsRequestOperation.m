@@ -78,7 +78,6 @@
 						} while(childElement != nil);
 						theNewsItem.section = section;
 						[self.resultArray addObject:theNewsItem];
-						//theNewsItem = nil;
 						[theNewsItem release];
 						itemElement = itemElement -> nextSibling;
 					} while(itemElement != nil);

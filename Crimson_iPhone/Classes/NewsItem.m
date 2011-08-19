@@ -7,7 +7,7 @@
 //
 
 #import "NewsItem.h"
-
+#import "UILabel+Categories.h"
 
 @implementation NewsItem
 
@@ -25,7 +25,6 @@
 }
 
 -(void)dealloc {
-	[super dealloc];
 	[title release];
 	[thumbnailURL release];
 	[link release];
@@ -33,6 +32,8 @@
 	[pubDate release];
 	[description release];
 	[author release];
+	[super dealloc];
+	
 }
 
 @end

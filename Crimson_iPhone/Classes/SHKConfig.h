@@ -47,6 +47,7 @@
 
 #define SHKFacebookUseSessionProxy  NO 
 #define SHKFacebookKey				@"189714794423328"
+#define SHKFacebookAppID			@"189714794423328"
 #define SHKFacebookSecret			@"08a6268a751b1ccba78bfded7d25d2ce "
 #define SHKFacebookSessionProxyURL  @""
 

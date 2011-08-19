@@ -11,7 +11,7 @@
 
 @class NewsItem;
 
-@interface NewsDetailViewController : UIViewController <MFMailComposeViewControllerDelegate> {
+@interface NewsDetailViewController : UIViewController <MFMailComposeViewControllerDelegate, UIScrollViewDelegate> {
 	UIScrollView *mainScrollView;
 	UIView *mainContentView;
 	UIView *imageView;
