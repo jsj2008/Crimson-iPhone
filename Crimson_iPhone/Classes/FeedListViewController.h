@@ -34,6 +34,7 @@
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 -(IBAction)segmentedControlSegmentChanged:(id)sender;
+-(IBAction)onInfoPressed:(id)sender;
 -(void)updateTableWithNewData:(NSMutableArray *)newArray;
 
 @end

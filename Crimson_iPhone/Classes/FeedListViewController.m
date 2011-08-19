@@ -10,6 +10,7 @@
 #import "NewsRequestOperation.h"
 #import "ArticleTableViewCell.h"
 #import "NewsDetailViewController.h"
+#import "InfoViewController.h"
 #import "UIView+FirstResponder.h"
 #import "dialogs.h"
 #import "config.h"
@@ -46,6 +47,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	self.title = @"";
 	self.allNewsArticles = [NSMutableArray array];
 	self.allOpinionArticles = [NSMutableArray array];
 	self.allSportsArticles = [NSMutableArray array];
@@ -331,6 +333,22 @@
 	
 	[super touchesEnded:touches withEvent:event];
 	[[self.view findFirstResponder] resignFirstResponder];
+}
+
+-(IBAction)onInfoPressed:(id)sender {
+	InfoViewController *info = [[InfoViewController alloc]init];
+	[UIView beginAnimations:@"View Flip" context:nil];
+	[UIView setAnimationDuration:0.80];
+	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+	
+	[UIView setAnimationTransition:
+	 UIViewAnimationTransitionFlipFromRight
+						   forView:self.navigationController.view cache:NO];
+	
+	
+	[self.navigationController pushViewController:info animated:YES];
+	[UIView commitAnimations];
+	[info release];
 }
 	 
 @end

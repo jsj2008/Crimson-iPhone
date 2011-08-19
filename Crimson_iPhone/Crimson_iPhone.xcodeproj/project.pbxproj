@@ -115,6 +115,9 @@
 		E586376913DF638C00EB552C /* SHKOAuthView.m in Sources */ = {isa = PBXBuildFile; fileRef = E586372813DF638C00EB552C /* SHKOAuthView.m */; };
 		E586376A13DF638C00EB552C /* SHKViewControllerWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E586372A13DF638C00EB552C /* SHKViewControllerWrapper.m */; };
 		E586376B13DF638C00EB552C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E586372D13DF638C00EB552C /* Reachability.m */; };
+		E5A1F1CF13FED51800A4BC3D /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A1F1CD13FED51800A4BC3D /* InfoViewController.m */; };
+		E5A1F1D013FED51800A4BC3D /* InfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5A1F1CE13FED51800A4BC3D /* InfoViewController.xib */; };
+		E5A1F2CB13FEE7C900A4BC3D /* WhiteText.png in Resources */ = {isa = PBXBuildFile; fileRef = E5A1F2CA13FEE7C900A4BC3D /* WhiteText.png */; };
 		E5D0C92713FE33D700E3EAC4 /* Facebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C91E13FE33D700E3EAC4 /* Facebook.m */; };
 		E5D0C92813FE33D700E3EAC4 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E5D0C92013FE33D700E3EAC4 /* FBDialog.bundle */; };
 		E5D0C92913FE33D700E3EAC4 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C92213FE33D700E3EAC4 /* FBDialog.m */; };
@@ -340,6 +343,10 @@
 		E586372A13DF638C00EB552C /* SHKViewControllerWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKViewControllerWrapper.m; sourceTree = "<group>"; };
 		E586372C13DF638C00EB552C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E586372D13DF638C00EB552C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E5A1F1CC13FED51800A4BC3D /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		E5A1F1CD13FED51800A4BC3D /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		E5A1F1CE13FED51800A4BC3D /* InfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = InfoViewController.xib; path = Classes/InfoViewController.xib; sourceTree = "<group>"; };
+		E5A1F2CA13FEE7C900A4BC3D /* WhiteText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhiteText.png; sourceTree = "<group>"; };
 		E5D0C91D13FE33D700E3EAC4 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		E5D0C91E13FE33D700E3EAC4 /* Facebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Facebook.m; sourceTree = "<group>"; };
 		E5D0C91F13FE33D700E3EAC4 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
@@ -502,6 +509,8 @@
 				E525ABC813D9D72C00203B4C /* FeedListViewController.m */,
 				E525ABA213D9D52E00203B4C /* NewsDetailViewController.h */,
 				E525ABA313D9D52E00203B4C /* NewsDetailViewController.m */,
+				E5A1F1CC13FED51800A4BC3D /* InfoViewController.h */,
+				E5A1F1CD13FED51800A4BC3D /* InfoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -510,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				E5A1F1CE13FED51800A4BC3D /* InfoViewController.xib */,
 				E525ABC913D9D72C00203B4C /* FeedListViewController.xib */,
 				E525ABA413D9D52E00203B4C /* NewsDetailViewController.xib */,
 			);
@@ -566,6 +576,7 @@
 				E500A9A413FC21FC004A8FD6 /* Splash Images */,
 				E500A9A313FC21F5004A8FD6 /* App Icons */,
 				E584803613DCAA9000772AF3 /* seal_background.png */,
+				E5A1F2CA13FEE7C900A4BC3D /* WhiteText.png */,
 				E556583113DB195000479193 /* grey_seal.png */,
 				E55657FD13DB117900479193 /* table_hr@2x.png */,
 				E55657FB13DB116300479193 /* table_hr.png */,
@@ -1138,6 +1149,8 @@
 				E500A9A713FC2282004A8FD6 /* icon@2x.png in Resources */,
 				E500A9A913FC2391004A8FD6 /* icon-512.png in Resources */,
 				E5D0C92813FE33D700E3EAC4 /* FBDialog.bundle in Resources */,
+				E5A1F1D013FED51800A4BC3D /* InfoViewController.xib in Resources */,
+				E5A1F2CB13FEE7C900A4BC3D /* WhiteText.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1241,6 +1254,7 @@
 				E5D0C94013FE33F500E3EAC4 /* SBJsonParser.m in Sources */,
 				E5D0C94113FE33F500E3EAC4 /* SBJsonWriter.m in Sources */,
 				E5D0C94413FE340A00E3EAC4 /* SHKFacebook.m in Sources */,
+				E5A1F1CF13FED51800A4BC3D /* InfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1251,7 +1265,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/Crimson-iPhone/Crimson_iPhone/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;

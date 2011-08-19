@@ -202,7 +202,7 @@ signatureProvider:(id<OASignatureProviding, NSObject>)aProvider
     NSMakeCollectable(theUUID);
     nonce = (NSString *)string;
 	CFRelease(theUUID);
-	CFRelease(string);
+	//CFRelease(string);
 }
 
 - (NSString *)_signatureBaseString
