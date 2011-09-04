@@ -22,7 +22,7 @@
 	<key>CFBundleIconFile</key>
 	<string>icon.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.thecrimson.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.thecrimson.The-Crimson</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

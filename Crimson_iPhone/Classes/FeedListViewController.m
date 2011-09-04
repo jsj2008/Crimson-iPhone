@@ -132,9 +132,7 @@
 }
 
 -(void)setupSegControl {
-	NSLog(@"Setting up segment control");
 	[segControl removeAllSegments];
-	
 	[segControl insertSegmentWithTitle:kArticleSegmentNews atIndex:0 animated:NO];
 	[segControl insertSegmentWithTitle:kArticleSegmentOpinion atIndex:1 animated:NO];
 	[segControl insertSegmentWithTitle:kArticleSegmentSports atIndex:2 animated:NO];
@@ -142,6 +140,7 @@
 	[segControl insertSegmentWithTitle:kArticleSegmentArts atIndex:4 animated:NO];
 	[segControl insertSegmentWithTitle:kArticleSegmentFlyby atIndex:5 animated:NO];
 	segControl.selectedSegmentIndex = 0;
+    
 }
 
 -(void)initialiseView {
@@ -336,7 +335,7 @@
 }
 
 -(IBAction)onInfoPressed:(id)sender {
-	InfoViewController *info = [[InfoViewController alloc]init];
+	InfoViewController *info = [[InfoViewController alloc]initWithNibName:@"InfoViewController" bundle:[NSBundle mainBundle]];
 	[UIView beginAnimations:@"View Flip" context:nil];
 	[UIView setAnimationDuration:0.80];
 	[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];

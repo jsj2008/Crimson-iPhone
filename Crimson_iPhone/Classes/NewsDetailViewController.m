@@ -108,6 +108,26 @@
 -(void)initialiseView {
 	NSString *logMsg = [NSString stringWithFormat:@"Viewed article: %@", theNewsItem.title];
 	[FlurryAPI logEvent:logMsg];
+    contentWebView.backgroundColor = [UIColor clearColor];
+	[contentWebView setOpaque:NO];
+	NSError * error = nil;
+	NSString *link = [NSString stringWithFormat:@"%@", theNewsItem.link];
+	
+	HTMLParser * parser = [[HTMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:link] error:&error];
+	if (error) {
+		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px; width: 302px; overflow:hidden;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@<p>Connect to the Internet for full article text.</div></body></html>", theNewsItem.description] baseURL:nil];
+	}
+	else {
+		HTMLNode *bodyNode = [parser body];
+		NSArray *divNodes = [bodyNode findChildTags:@"div"];
+		NSString *articleText = nil;
+		for (HTMLNode *divNode in divNodes) {
+			if ([[divNode getAttributeNamed:@"class"] isEqualToString:@"text"]) {
+				articleText = rawContentsOfNode(divNode -> _node);
+			}
+		}
+		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><style>#related_contents{display:none;} body{overflow: hidden; font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:20px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
+	}
 	titleLabel.backgroundColor = [UIColor clearColor];
 	[titleLabel setTextWithFlexibleHeight:theNewsItem.title withWidth:280];
 	CGRect newFrame = authorLabel.frame;
@@ -129,9 +149,9 @@
 		}
 		imageView.backgroundColor = [UIColor clearColor];
 		imageView.frame = CGRectMake(0, 0, 320, articleImage.frame.size.height+10);
-		[mainScrollView insertSubview:imageView aboveSubview:mainContentView];
 		float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
 		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y +15, 320, rowHeight);
+        
 	}
 	else {
 		CGRect theFrame = CGRectMake(0,0,0,0);
@@ -139,30 +159,9 @@
 		float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
 		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y-15, 320, rowHeight);
 	}
-	mainContentView.backgroundColor = [UIColor clearColor];
-	[mainScrollView addSubview:mainContentView];
-	contentWebView.backgroundColor = [UIColor clearColor];
-	[contentWebView setOpaque:NO];
-	NSError * error = nil;
-	NSString *link = [NSString stringWithFormat:@"%@", theNewsItem.link];
-	
-	HTMLParser * parser = [[HTMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:link] error:&error];
-	if (error) {
-		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><meta name='viewport' content='initial-scale=1.0,maximum-scale=10.0'/><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@<p>Connect to the Internet for full article text.</div></body></html>", theNewsItem.description] baseURL:nil];
-	}
-	else {
-		HTMLNode *bodyNode = [parser body];
-		NSArray *divNodes = [bodyNode findChildTags:@"div"];
-		NSString *articleText = nil;
-		for (HTMLNode *divNode in divNodes) {
-			if ([[divNode getAttributeNamed:@"class"] isEqualToString:@"text"]) {
-				articleText = rawContentsOfNode(divNode -> _node);
-			}
-		}
-		[contentWebView loadHTMLString:[NSString stringWithFormat:@"<html><head><meta name='viewport' content='initial-scale=1.0,maximum-scale=10.0'/><style>#related_contents{display:none;} body{font-family: georgia,\"times new roman\",times,serif; background-color:transparent; padding-left:13px; padding-right:13px;}</style><style type=\"text/css\">a:link {color:#000000;text-decoration: none;}</style></head><body><div style=\"font-size:13.5;color:#000000\">%@</div></body></html>", articleText] baseURL:nil];
-	}
-	[parser release];
-	[mainScrollView insertSubview:contentWebView belowSubview:mainContentView];
+    mainContentView.backgroundColor = [UIColor clearColor];
+    [mainScrollView addSubview:contentWebView];
+	[parser release];	
 }
 
 -(NSString *)stringNameForSection:(Section)theSection {
@@ -210,6 +209,9 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView 
 {	
+    [mainScrollView insertSubview:mainContentView aboveSubview:contentWebView];
+    [mainScrollView insertSubview:imageView aboveSubview:mainContentView];
+    
 	CGRect frame = contentWebView.frame;
     frame.size.height = 1;
     contentWebView.frame = frame;
@@ -228,10 +230,11 @@
 	NSArray *items = [NSArray arrayWithObjects: flexibleSpace, shareButton, flexibleSpace, nil];
 	[flexibleSpace release];
 	[shareBar setItems:items animated:NO];
+    
 	CGRect contentRect = CGRectZero;
 	for (UIView *view in [mainScrollView subviews])
 		contentRect = CGRectUnion(contentRect, view.frame);
-	mainScrollView.contentSize = contentRect.size;
+    mainScrollView.contentSize = CGSizeMake(320, contentRect.size.height);
 }
 
 -(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType 
