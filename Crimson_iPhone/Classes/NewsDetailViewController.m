@@ -31,8 +31,8 @@
 @synthesize articleImage;
 @synthesize contentWebView;
 @synthesize authorLabel;
-@synthesize shareButton;
-@synthesize shareBar;
+//@synthesize shareButton;
+//@synthesize shareBar;
 @synthesize theNewsItem;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -58,6 +58,9 @@
 	[self initialiseView];
 	self.navigationController.navigationBarHidden = NO;
 	self.navigationController.navigationBar.backItem.title = @"Back"; 
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(buttonPressed:)];
+    self.navigationItem.rightBarButtonItem = item;
+    [item release];
 }
 
 // Override to allow orientations other than the default portrait orientation.
@@ -85,8 +88,8 @@
 	self.authorLabel = nil;
 	self.dateLabel = nil;
 	self.contentWebView = nil;
-	self.shareButton = nil;
-	self.shareBar = nil;
+	//self.shareButton = nil;
+	//self.shareBar = nil;
 }
 
 
@@ -100,8 +103,8 @@
 	[articleImage release];
 	[authorLabel release];
 	[contentWebView release];
-	[shareButton release];
-	[shareBar release];
+	//[shareButton release];
+	//[shareBar release];
 	//[theNewsItem release];
 }
 
@@ -194,7 +197,6 @@
 
 
 -(IBAction)buttonPressed:(id)sender {
-	if (shareButton == sender) {
 		// Create the item to share (in this example, a url)
 		NSURL *url = [NSURL URLWithString:theNewsItem.link];
 		SHKItem *item = [SHKItem URL:url title:theNewsItem.title];
@@ -204,7 +206,7 @@
 		
 		// Display the action sheet
 		[actionSheet showFromToolbar:self.navigationController.toolbar];
-	}
+	
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView 
@@ -225,11 +227,11 @@
 	theFrame.origin.y = mainContentView.frame.size.height + mainContentView.frame.origin.y - 20;
 	contentWebView.frame = theFrame;
 	
-	UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+	/*UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 	shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(buttonPressed:)];
 	NSArray *items = [NSArray arrayWithObjects: flexibleSpace, shareButton, flexibleSpace, nil];
 	[flexibleSpace release];
-	[shareBar setItems:items animated:NO];
+	[shareBar setItems:items animated:NO];*/
     
 	CGRect contentRect = CGRectZero;
 	for (UIView *view in [mainScrollView subviews])

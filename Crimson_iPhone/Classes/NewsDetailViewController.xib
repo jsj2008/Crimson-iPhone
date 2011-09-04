@@ -64,7 +64,6 @@
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -217,7 +216,6 @@
 				<string key="NSFrameSize">{319, 249}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MSAxIDEAA</bytes>
@@ -316,22 +314,6 @@
 						<reference key="destination" ref="1049499418"/>
 					</object>
 					<int key="connectionID">47</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">shareBar</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="923974186"/>
-					</object>
-					<int key="connectionID">51</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">shareButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="205874537"/>
-					</object>
-					<int key="connectionID">52</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -548,8 +530,6 @@
 							<string>imageView</string>
 							<string>mainContentView</string>
 							<string>mainScrollView</string>
-							<string>shareBar</string>
-							<string>shareButton</string>
 							<string>titleLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -561,8 +541,6 @@
 							<string>UIView</string>
 							<string>UIView</string>
 							<string>UIScrollView</string>
-							<string>UIToolbar</string>
-							<string>UIBarButtonItem</string>
 							<string>UILabel</string>
 						</object>
 					</object>
@@ -577,8 +555,6 @@
 							<string>imageView</string>
 							<string>mainContentView</string>
 							<string>mainScrollView</string>
-							<string>shareBar</string>
-							<string>shareButton</string>
 							<string>titleLabel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -610,14 +586,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">mainScrollView</string>
 								<string key="candidateClassName">UIScrollView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">shareBar</string>
-								<string key="candidateClassName">UIToolbar</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">shareButton</string>
-								<string key="candidateClassName">UIBarButtonItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">titleLabel</string>

@@ -20,8 +20,8 @@
 	UILabel *authorLabel;
 	UIImageView *articleImage;
 	UIWebView *contentWebView;
-	UIToolbar *shareBar;
-	UIBarButtonItem *shareButton;
+	//UIToolbar *shareBar;
+	//UIBarButtonItem *shareButton;
 	
 	NewsItem *theNewsItem;
 }
@@ -34,8 +34,8 @@
 @property(nonatomic, retain) IBOutlet UILabel *dateLabel;
 @property(nonatomic, retain) IBOutlet UILabel *authorLabel;
 @property(nonatomic, retain) IBOutlet UIWebView *contentWebView;
-@property(nonatomic, retain) IBOutlet UIToolbar *shareBar;
-@property(nonatomic, retain) IBOutlet UIBarButtonItem *shareButton;
+//@property(nonatomic, retain) IBOutlet UIToolbar *shareBar;
+//@property(nonatomic, retain) IBOutlet UIBarButtonItem *shareButton;
 @property(nonatomic, retain) NewsItem *theNewsItem;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil newsItem:(NewsItem *)aNewsItem;
