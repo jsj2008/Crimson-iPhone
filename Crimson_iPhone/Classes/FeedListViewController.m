@@ -349,5 +349,9 @@
 	[UIView commitAnimations];
 	[info release];
 }
+
+-(IBAction)onRefreshPressed:(id)sender {
+    NSLog(@"Refresh button pressed");
+}
 	 
 @end

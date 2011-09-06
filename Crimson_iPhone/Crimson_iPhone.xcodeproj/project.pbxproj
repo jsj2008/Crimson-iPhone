@@ -131,6 +131,8 @@
 		E5D0C94013FE33F500E3EAC4 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93913FE33F500E3EAC4 /* SBJsonParser.m */; };
 		E5D0C94113FE33F500E3EAC4 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C93B13FE33F500E3EAC4 /* SBJsonWriter.m */; };
 		E5D0C94413FE340A00E3EAC4 /* SHKFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D0C94313FE340A00E3EAC4 /* SHKFacebook.m */; };
+		E5FE52151415D158002EE6C9 /* UIButtonBarRefresh.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FE52131415D158002EE6C9 /* UIButtonBarRefresh.png */; };
+		E5FE52161415D158002EE6C9 /* UIButtonBarRefresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5FE52141415D158002EE6C9 /* UIButtonBarRefresh@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -375,6 +377,8 @@
 		E5D0C94213FE340A00E3EAC4 /* SHKFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebook.h; sourceTree = "<group>"; };
 		E5D0C94313FE340A00E3EAC4 /* SHKFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebook.m; sourceTree = "<group>"; };
 		E5D0C98613FE3C5200E3EAC4 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		E5FE52131415D158002EE6C9 /* UIButtonBarRefresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UIButtonBarRefresh.png; sourceTree = "<group>"; };
+		E5FE52141415D158002EE6C9 /* UIButtonBarRefresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UIButtonBarRefresh@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -575,6 +579,8 @@
 		E55657FA13DB113E00479193 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				E5FE52131415D158002EE6C9 /* UIButtonBarRefresh.png */,
+				E5FE52141415D158002EE6C9 /* UIButtonBarRefresh@2x.png */,
 				E51AEFCD14130E900001B29E /* searchfilter_panel.png */,
 				E500A9A413FC21FC004A8FD6 /* Splash Images */,
 				E500A9A313FC21F5004A8FD6 /* App Icons */,
@@ -1155,6 +1161,8 @@
 				E5A1F1D013FED51800A4BC3D /* InfoViewController.xib in Resources */,
 				E5A1F2CB13FEE7C900A4BC3D /* WhiteText.png in Resources */,
 				E51AEFCE14130E900001B29E /* searchfilter_panel.png in Resources */,
+				E5FE52151415D158002EE6C9 /* UIButtonBarRefresh.png in Resources */,
+				E5FE52161415D158002EE6C9 /* UIButtonBarRefresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
