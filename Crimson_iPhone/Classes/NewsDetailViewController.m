@@ -226,12 +226,6 @@
 	theFrame.origin.x = - 2;
 	theFrame.origin.y = mainContentView.frame.size.height + mainContentView.frame.origin.y - 20;
 	contentWebView.frame = theFrame;
-	
-	/*UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-	shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(buttonPressed:)];
-	NSArray *items = [NSArray arrayWithObjects: flexibleSpace, shareButton, flexibleSpace, nil];
-	[flexibleSpace release];
-	[shareBar setItems:items animated:NO];*/
     
 	CGRect contentRect = CGRectZero;
 	for (UIView *view in [mainScrollView subviews])

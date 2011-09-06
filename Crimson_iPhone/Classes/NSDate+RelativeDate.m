@@ -20,7 +20,7 @@
 {
 	//E.g. Monday, July 22, 2011
 	NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-	[dateFormatter setDateFormat:@"EEEE, MMMM dd, yyyy"];
+	[dateFormatter setDateFormat:@"EEEE, MMMM dd, yyyy, h:mm a"];
 	
 	return [dateFormatter stringFromDate:date];
 }
