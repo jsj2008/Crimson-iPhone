@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PullToRefreshView.h"
 
-@interface FeedListViewController : UIViewController {
+@interface FeedListViewController : UIViewController <PullToRefreshViewDelegate>{
 	UITableView *articlesTable;
 	UISegmentedControl *segControl;
 	
@@ -21,11 +22,13 @@
 	NSMutableArray *allFlybyArticles;
     
     NSOperationQueue *q;
+    
+    PullToRefreshView *pull;
 }
 
 @property(nonatomic, retain) IBOutlet UITableView *articlesTable;
 @property(nonatomic, retain) IBOutlet UISegmentedControl *segControl;
-
+@property(nonatomic, retain) PullToRefreshView *pull;
 @property(nonatomic, retain) NSMutableArray *allNewsArticles;
 @property(nonatomic, retain) NSMutableArray *allOpinionArticles;
 @property(nonatomic, retain) NSMutableArray *allSportsArticles;
@@ -39,8 +42,8 @@
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 -(IBAction)segmentedControlSegmentChanged:(id)sender;
 -(IBAction)onInfoPressed:(id)sender;
--(IBAction)onRefreshPressed:(id)sender;
 -(void)updateTableWithNewData:(NSMutableArray *)newArray;
 -(void)unloadQueue;
+- (void)pullToRefreshViewShouldRefresh:(PullToRefreshView *)view;
 
 @end

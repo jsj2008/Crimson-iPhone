@@ -22,11 +22,13 @@
 
 @end
 
+PullToRefreshView *pull;
+
 @implementation FeedListViewController
 
 @synthesize articlesTable;
 @synthesize segControl;
-
+@synthesize pull;
 @synthesize allNewsArticles;
 @synthesize allOpinionArticles;
 @synthesize allSportsArticles;
@@ -56,6 +58,10 @@
 	self.allArtsArticles = [NSMutableArray array];
 	self.allFlybyArticles = [NSMutableArray array];
 	self.currentArticleItems = [NSMutableArray array];
+    
+    pull = [[PullToRefreshView alloc] initWithScrollView:self.articlesTable];
+    [pull setDelegate:self];
+    [self.articlesTable addSubview:pull];
 	
     self.q = [[NSOperationQueue alloc]init];
     
@@ -104,7 +110,7 @@
 	
 	[articlesTable release];
 	[segControl release];
-	
+	[pull release];
 	[allNewsArticles release];
 	[allOpinionArticles release];
 	[allSportsArticles release];
@@ -332,15 +338,14 @@
 	[info release];
 }
 
--(IBAction)onRefreshPressed:(id)sender {
-    NSLog(@"Refresh button pressed");
+- (void)pullToRefreshViewShouldRefresh:(PullToRefreshView *)view {
     [self.q cancelAllOperations];
     self.q = nil;
     [self unloadQueue];
+    [pull finishedLoading];
 }
 
 -(void)unloadQueue {
-    NSLog(@"Unloading queue");
 	[self.q setMaxConcurrentOperationCount:2];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchArticlesRequestDidFinish:) name:NEWS_NOTIFICATION object:nil];
@@ -359,7 +364,6 @@
     [self.q addOperation:op4];
     [self.q addOperation:op5];
     [self.q addOperation:op6];
-    
     [q release];
 }
 	 
