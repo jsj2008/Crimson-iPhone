@@ -35,6 +35,7 @@
 @synthesize allFlybyArticles;
 @synthesize currentArticleItems;
 
+@synthesize q;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -56,30 +57,11 @@
 	self.allFlybyArticles = [NSMutableArray array];
 	self.currentArticleItems = [NSMutableArray array];
 	
+    self.q = [[NSOperationQueue alloc]init];
+    
 	[self initialiseView];
 	
-	NSOperationQueue *q = [[NSOperationQueue alloc]init];
-	[q setMaxConcurrentOperationCount:2];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchArticlesRequestDidFinish:) name:NEWS_NOTIFICATION object:nil];
-	 
-	 NewsRequestOperation *op1 = [NewsRequestOperation operationWithSection:eSectionNews];
-	 NewsRequestOperation *op2 = [NewsRequestOperation operationWithSection:eSectionOpinion];
-	 NewsRequestOperation *op3 = [NewsRequestOperation operationWithSection:eSectionSports];
-	 NewsRequestOperation *op4 = [NewsRequestOperation operationWithSection:eSectionFM];
-	 NewsRequestOperation *op5 = [NewsRequestOperation operationWithSection:eSectionArts];
-	 NewsRequestOperation *op6 = [NewsRequestOperation operationWithSection:eSectionFlyby];
-	 
-	 [op1 setQueuePriority:NSOperationQueuePriorityVeryHigh];
-	 [q addOperation:op1];
-	 [q addOperation:op2];
-	 [q addOperation:op3];
-	 [q addOperation:op4];
-	 [q addOperation:op5];
-	 [q addOperation:op6];
-	 
-	 [q release];
-						  
+	[self unloadQueue];		  
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -114,6 +96,7 @@
     [super viewDidUnload];
     self.articlesTable = nil;
 	self.segControl = nil;
+    self.q = nil;
 }
 
 - (void)dealloc {
@@ -344,7 +327,6 @@
 	 UIViewAnimationTransitionFlipFromRight
 						   forView:self.navigationController.view cache:NO];
 	
-	
 	[self.navigationController pushViewController:info animated:YES];
 	[UIView commitAnimations];
 	[info release];
@@ -352,6 +334,33 @@
 
 -(IBAction)onRefreshPressed:(id)sender {
     NSLog(@"Refresh button pressed");
+    [self.q cancelAllOperations];
+    self.q = nil;
+    [self unloadQueue];
+}
+
+-(void)unloadQueue {
+    NSLog(@"Unloading queue");
+	[self.q setMaxConcurrentOperationCount:2];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fetchArticlesRequestDidFinish:) name:NEWS_NOTIFICATION object:nil];
+    
+    NewsRequestOperation *op1 = [NewsRequestOperation operationWithSection:eSectionNews];
+    NewsRequestOperation *op2 = [NewsRequestOperation operationWithSection:eSectionOpinion];
+    NewsRequestOperation *op3 = [NewsRequestOperation operationWithSection:eSectionSports];
+    NewsRequestOperation *op4 = [NewsRequestOperation operationWithSection:eSectionFM];
+    NewsRequestOperation *op5 = [NewsRequestOperation operationWithSection:eSectionArts];
+    NewsRequestOperation *op6 = [NewsRequestOperation operationWithSection:eSectionFlyby];
+    
+    [op1 setQueuePriority:NSOperationQueuePriorityVeryHigh];
+    [self.q addOperation:op1];
+    [self.q addOperation:op2];
+    [self.q addOperation:op3];
+    [self.q addOperation:op4];
+    [self.q addOperation:op5];
+    [self.q addOperation:op6];
+    
+    [q release];
 }
 	 
 @end

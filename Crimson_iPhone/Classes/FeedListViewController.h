@@ -19,6 +19,8 @@
 	NSMutableArray *allFMArticles;
 	NSMutableArray *allArtsArticles;
 	NSMutableArray *allFlybyArticles;
+    
+    NSOperationQueue *q;
 }
 
 @property(nonatomic, retain) IBOutlet UITableView *articlesTable;
@@ -32,10 +34,13 @@
 @property(nonatomic, retain) NSMutableArray *allFlybyArticles;
 @property(nonatomic, retain) NSMutableArray *currentArticleItems;
 
+@property(nonatomic, retain) NSOperationQueue *q;
+
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil;
 -(IBAction)segmentedControlSegmentChanged:(id)sender;
 -(IBAction)onInfoPressed:(id)sender;
 -(IBAction)onRefreshPressed:(id)sender;
 -(void)updateTableWithNewData:(NSMutableArray *)newArray;
+-(void)unloadQueue;
 
 @end
