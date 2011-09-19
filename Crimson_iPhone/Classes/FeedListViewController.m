@@ -22,12 +22,11 @@
 
 @end
 
-PullToRefreshView *pull;
-
 @implementation FeedListViewController
 
 @synthesize articlesTable;
 @synthesize segControl;
+@synthesize updatedLabel;
 @synthesize pull;
 @synthesize allNewsArticles;
 @synthesize allOpinionArticles;
@@ -50,7 +49,9 @@ PullToRefreshView *pull;
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"View did load");
 	self.title = @"";
+    
 	self.allNewsArticles = [NSMutableArray array];
 	self.allOpinionArticles = [NSMutableArray array];
 	self.allSportsArticles = [NSMutableArray array];
@@ -62,7 +63,7 @@ PullToRefreshView *pull;
     pull = [[PullToRefreshView alloc] initWithScrollView:self.articlesTable];
     [pull setDelegate:self];
     [self.articlesTable addSubview:pull];
-	
+	self.updatedLabel.text = [pull grabDateString:[pull getDate]];
     self.q = [[NSOperationQueue alloc]init];
     
 	[self initialiseView];
@@ -102,6 +103,7 @@ PullToRefreshView *pull;
     [super viewDidUnload];
     self.articlesTable = nil;
 	self.segControl = nil;
+    self.updatedLabel = nil;
     self.q = nil;
 }
 
@@ -110,7 +112,8 @@ PullToRefreshView *pull;
 	
 	[articlesTable release];
 	[segControl release];
-	[pull release];
+    [updatedLabel release];
+    [q release];
 	[allNewsArticles release];
 	[allOpinionArticles release];
 	[allSportsArticles release];
@@ -207,7 +210,7 @@ PullToRefreshView *pull;
 
 -(void)fetchArticlesRequestDidFinish:(NSNotification *)notification {
 	if (![NSThread isMainThread]) {
-		[self performSelectorOnMainThread:@selector(fetchArticlesRequestDidFinish:) withObject:notification waitUntilDone:YES];
+		[self performSelectorOnMainThread:@selector(fetchArticlesRequestDidFinish:) withObject:notification waitUntilDone:NO];
 		return;
 	}
 	
@@ -223,7 +226,6 @@ PullToRefreshView *pull;
 				[self.allNewsArticles removeAllObjects];
 				self.allNewsArticles = [NSMutableArray arrayWithArray:responseData];
 				if (0 == segControl.selectedSegmentIndex) {
-					NSLog(@"Going to update new data");
 					[self updateTableWithNewData:self.allNewsArticles];
 				}
 				break;
@@ -268,20 +270,20 @@ PullToRefreshView *pull;
 
 -(void)updateTableWithNewData:(NSMutableArray *)newArray
 {
-	BOOL needsToReload = NO;
+	/*BOOL needsToReload = NO;
 	
 	if ([self.currentArticleItems count] != [newArray count])
 	{
 		needsToReload = YES;
-	}
+	}*/
 	
 	[self.currentArticleItems removeAllObjects];
 	self.currentArticleItems = [NSMutableArray arrayWithArray:newArray];
 	
-	if (needsToReload)
-	{
+	//if (needsToReload)
+	//{
 		[self.articlesTable reloadData];
-	}
+	//}
 }
 
 -(NSMutableArray*)arrayForSelectedSegment {
@@ -340,8 +342,8 @@ PullToRefreshView *pull;
 
 - (void)pullToRefreshViewShouldRefresh:(PullToRefreshView *)view {
     [self.q cancelAllOperations];
-    self.q = nil;
     [self unloadQueue];
+    self.updatedLabel.text = [pull grabDateString:[pull getDate]];
     [pull finishedLoading];
 }
 
@@ -364,7 +366,7 @@ PullToRefreshView *pull;
     [self.q addOperation:op4];
     [self.q addOperation:op5];
     [self.q addOperation:op6];
-    [q release];
+    
 }
 	 
 @end

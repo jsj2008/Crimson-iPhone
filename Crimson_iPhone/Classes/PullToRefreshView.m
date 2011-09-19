@@ -115,17 +115,28 @@
 #pragma mark Setters
 
 - (void)refreshLastUpdatedDate {
-    NSDate *date = [NSDate date];
+   
 
+    lastUpdatedLabel.text = [self grabDateString:[self getDate]];
+}
+
+-(NSDate *)getDate {
+    NSDate *date = [NSDate date];
+    
 	if ([delegate respondsToSelector:@selector(pullToRefreshViewLastUpdated:)])
 		date = [delegate pullToRefreshViewLastUpdated:self];
+    return date;
+}
 
+- (NSString *)grabDateString:(NSDate *)date {
+    
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setAMSymbol:@"AM"];
     [formatter setPMSymbol:@"PM"];
     [formatter setDateFormat:@"MM/dd/yy hh:mm a"];
-    lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:date]];
+    NSString *text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:date]];
     [formatter release];
+    return text;
 }
 
 - (void)setState:(PullToRefreshViewState)state_ {

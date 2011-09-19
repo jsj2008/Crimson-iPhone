@@ -12,7 +12,7 @@
 @interface FeedListViewController : UIViewController <PullToRefreshViewDelegate>{
 	UITableView *articlesTable;
 	UISegmentedControl *segControl;
-	
+	UILabel *updatedLabel;
 	NSMutableArray *currentArticleItems;
 	NSMutableArray *allNewsArticles;
 	NSMutableArray *allOpinionArticles;
@@ -28,6 +28,7 @@
 
 @property(nonatomic, retain) IBOutlet UITableView *articlesTable;
 @property(nonatomic, retain) IBOutlet UISegmentedControl *segControl;
+@property(nonatomic, retain) IBOutlet UILabel *updatedLabel;
 @property(nonatomic, retain) PullToRefreshView *pull;
 @property(nonatomic, retain) NSMutableArray *allNewsArticles;
 @property(nonatomic, retain) NSMutableArray *allOpinionArticles;

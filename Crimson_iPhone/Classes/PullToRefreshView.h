@@ -53,7 +53,8 @@ typedef enum {
 
 - (void)refreshLastUpdatedDate;
 - (void)finishedLoading;
-
+- (NSString *)grabDateString:(NSDate *)date;
+- (NSDate *)getDate;
 - (id)initWithScrollView:(UIScrollView *)scrollView;
 
 @end
