@@ -14,6 +14,7 @@
 @synthesize section;
 @synthesize title;
 @synthesize thumbnailURL;
+@synthesize contentURL;
 @synthesize link;
 @synthesize ePubDate;
 @synthesize pubDate;
@@ -27,6 +28,7 @@
 -(void)dealloc {
 	[title release];
 	[thumbnailURL release];
+    [contentURL release];
 	[link release];
 	[ePubDate release];
 	[pubDate release];

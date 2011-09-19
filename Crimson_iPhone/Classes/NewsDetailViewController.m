@@ -141,13 +141,13 @@
 	newFrame.origin.y = authorLabel.frame.origin.y + authorLabel.frame.size.height-7;
 	dateLabel.frame = newFrame;
 	dateLabel.text = [NSDate getNewsDate:theNewsItem.pubDate];
-	if (theNewsItem.thumbnailURL) {
+	if (![theNewsItem.contentURL hasPrefix:YOUTUBE_URL]) {
 		articleImage.contentMode = UIViewContentModeScaleAspectFit;
-		if ([theNewsItem.thumbnailURL hasPrefix:[NSString stringWithFormat:@"%@", HOME_URL]]) {
-			[articleImage setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
+		if ([theNewsItem.contentURL hasPrefix:[NSString stringWithFormat:@"%@", HOME_URL]]) {
+			[articleImage setImageWithURL:[NSURL URLWithString:theNewsItem.contentURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		else {
-			NSString *fullURL = [NSString stringWithFormat:@"%@%@", HOME_URL, theNewsItem.thumbnailURL];
+			NSString *fullURL = [NSString stringWithFormat:@"%@%@", HOME_URL, theNewsItem.contentURL];
 			[articleImage setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		imageView.backgroundColor = [UIColor clearColor];
@@ -156,6 +156,9 @@
 		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y +15, 320, rowHeight);
         
 	}
+    else if (theNewsItem.contentURL) {
+        
+    }
 	else {
 		CGRect theFrame = CGRectMake(0,0,0,0);
 		imageView.frame = theFrame;

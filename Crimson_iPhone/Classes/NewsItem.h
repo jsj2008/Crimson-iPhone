@@ -22,6 +22,7 @@ typedef enum {
 	Section section;
 	NSString *_title;
 	NSString *_thumbnailURL;
+    NSString *_contentURL;
 	NSString *_link;
 	NSString *_ePubDate;
 	NSDate *_pubDate;
@@ -32,6 +33,7 @@ typedef enum {
 @property (nonatomic, assign) Section section;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *thumbnailURL;
+@property (nonatomic, copy) NSString *contentURL;
 @property (nonatomic, copy) NSString *link;
 @property (nonatomic, copy) NSString *ePubDate;
 @property (nonatomic, retain) NSDate *pubDate;

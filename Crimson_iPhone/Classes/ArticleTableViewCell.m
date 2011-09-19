@@ -85,7 +85,7 @@
 
 -(void)configureWithNewsItem:(NewsItem *)theNewsItem {
 	[self clearCell];
-	if (theNewsItem.thumbnailURL) {
+	if (theNewsItem.thumbnailURL && ![theNewsItem.thumbnailURL hasPrefix:YOUTUBE_URL]) {
 		thumbnailImageView.frame = kThumbImageFrame;
 		thumbnailImageView.contentMode = UIViewContentModeScaleAspectFill;
 		thumbnailImageView.layer.masksToBounds = YES;

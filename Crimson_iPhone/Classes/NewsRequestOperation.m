@@ -71,6 +71,9 @@
 							if ([[TBXML elementName:childElement] isEqualToString:@"media:content"]) {
 								theNewsItem.thumbnailURL = [TBXML valueOfAttributeNamed:@"url" forElement:childElement];
 							}
+                            if ([[TBXML elementName:childElement] isEqualToString:@"media:thumbnail"]) {
+								theNewsItem.contentURL = [TBXML valueOfAttributeNamed:@"url" forElement:childElement];
+							}
 							if ([[TBXML elementName:childElement] isEqualToString:@"dc:creator"]) {
 								theNewsItem.author = [[TBXML textForElement:childElement]gtm_stringByUnescapingFromHTML];
 							}
