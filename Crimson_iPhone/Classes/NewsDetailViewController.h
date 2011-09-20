@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "YouTubeView.h"
 
 @class NewsItem;
 
@@ -20,7 +21,7 @@
 	UILabel *authorLabel;
 	UIImageView *articleImage;
 	UIWebView *contentWebView;
-	
+	YouTubeView *youTubeView;
 	NewsItem *theNewsItem;
 }
 
@@ -32,6 +33,7 @@
 @property(nonatomic, retain) IBOutlet UILabel *dateLabel;
 @property(nonatomic, retain) IBOutlet UILabel *authorLabel;
 @property(nonatomic, retain) IBOutlet UIWebView *contentWebView;
+@property(nonatomic, retain) YouTubeView *youTubeView;
 @property(nonatomic, retain) NewsItem *theNewsItem;
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil newsItem:(NewsItem *)aNewsItem;

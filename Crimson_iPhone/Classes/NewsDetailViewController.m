@@ -16,6 +16,7 @@
 #import "HTMLParser.h"
 #import "SHK.h"
 #import "FlurryAPI.h"
+#import "YouTubeView.h"
 
 @interface NewsDetailViewController(Private)
 -(NSString *)stringNameForSection:(Section)theSection;
@@ -34,6 +35,7 @@
 //@synthesize shareButton;
 //@synthesize shareBar;
 @synthesize theNewsItem;
+@synthesize youTubeView;
 
 // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil newsItem:(NewsItem*)aNewsItem {
@@ -88,6 +90,7 @@
 	self.authorLabel = nil;
 	self.dateLabel = nil;
 	self.contentWebView = nil;
+    self.youTubeView = nil;
 	//self.shareButton = nil;
 	//self.shareBar = nil;
 }
@@ -103,6 +106,7 @@
 	[articleImage release];
 	[authorLabel release];
 	[contentWebView release];
+    [youTubeView release];
 	//[shareButton release];
 	//[shareBar release];
 	//[theNewsItem release];
@@ -141,7 +145,16 @@
 	newFrame.origin.y = authorLabel.frame.origin.y + authorLabel.frame.size.height-7;
 	dateLabel.frame = newFrame;
 	dateLabel.text = [NSDate getNewsDate:theNewsItem.pubDate];
-	if (![theNewsItem.contentURL hasPrefix:YOUTUBE_URL]) {
+    if ([theNewsItem.contentURL hasPrefix:YOUTUBE_URL]) {
+        youTubeView = [[YouTubeView alloc] 
+                                    initWithStringAsURL:theNewsItem.contentURL 
+                                    frame:CGRectMake(17.5, 17.5, 285, 223)];
+        float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
+        [imageView addSubview:youTubeView];
+        mainContentView.frame = CGRectMake(-2, imageView.frame.size.height +15, 320, rowHeight);
+    }
+
+	else if (theNewsItem.contentURL && ![theNewsItem.contentURL hasPrefix:YOUTUBE_URL]) {
 		articleImage.contentMode = UIViewContentModeScaleAspectFit;
 		if ([theNewsItem.contentURL hasPrefix:[NSString stringWithFormat:@"%@", HOME_URL]]) {
 			[articleImage setImageWithURL:[NSURL URLWithString:theNewsItem.contentURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
@@ -156,14 +169,11 @@
 		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y +15, 320, rowHeight);
         
 	}
-    else if (theNewsItem.contentURL) {
-        
-    }
-	else {
+    else {
 		CGRect theFrame = CGRectMake(0,0,0,0);
 		imageView.frame = theFrame;
 		float rowHeight = titleLabel.frame.size.height+authorLabel.frame.size.height+dateLabel.frame.size.height+10;
-		mainContentView.frame = CGRectMake(-2, articleImage.frame.size.height + imageView.frame.origin.y-15, 320, rowHeight);
+		mainContentView.frame = CGRectMake(-2, 0, 320, rowHeight);
 	}
     mainContentView.backgroundColor = [UIColor clearColor];
     [mainScrollView addSubview:contentWebView];
