@@ -57,7 +57,26 @@
 	tmpTitleLabel.textColor = [UIColor whiteColor];
 	tmpTitleLabel.backgroundColor = [UIColor clearColor];
 	self.navigationItem.titleView = tmpTitleLabel;
-	[self initialiseView];
+	// Create a view of the standard size at the bottom of the screen.
+    bannerView_ = [[GADBannerView alloc]
+                   initWithFrame:CGRectMake(0.0,
+                                            self.view.frame.size.height -
+                                            GAD_SIZE_320x50.height-42,
+                                            GAD_SIZE_320x50.width,
+                                            GAD_SIZE_320x50.height)];
+    
+    // Specify the ad's "unit identifier." This is your AdMob Publisher ID.
+    bannerView_.adUnitID = @"a14e7b8debaa722";
+    
+    // Let the runtime know which UIViewController to restore after taking
+    // the user wherever the ad goes and add it to the view hierarchy.
+    bannerView_.rootViewController = self;
+    [self.view addSubview:bannerView_];
+    
+    // Initiate a generic request to load it with an ad.
+    [bannerView_ loadRequest:[GADRequest request]];
+
+    [self initialiseView];
 	self.navigationController.navigationBarHidden = NO;
 	self.navigationController.navigationBar.backItem.title = @"Back"; 
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(buttonPressed:)];

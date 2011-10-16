@@ -85,12 +85,13 @@
 
 -(void)configureWithNewsItem:(NewsItem *)theNewsItem {
 	[self clearCell];
-	if (theNewsItem.thumbnailURL && ![theNewsItem.thumbnailURL hasPrefix:YOUTUBE_URL]) {
+	if (theNewsItem.thumbnailURL && !([theNewsItem.thumbnailURL hasPrefix:@"photos"] || [theNewsItem.thumbnailURL hasPrefix:@"misc"])) {
 		thumbnailImageView.frame = kThumbImageFrame;
 		thumbnailImageView.contentMode = UIViewContentModeScaleAspectFill;
 		thumbnailImageView.layer.masksToBounds = YES;
 		if ([theNewsItem.thumbnailURL hasPrefix:HOME_URL]) {
-			[thumbnailImageView setImageWithURL:[NSURL URLWithString:theNewsItem.thumbnailURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
+            NSString *fullURL = [NSString stringWithFormat:@"%@", theNewsItem.thumbnailURL];
+			[thumbnailImageView setImageWithURL:[NSURL URLWithString:fullURL] placeholderImage:[UIImage imageNamed:@"grey_seal.png"]];
 		}
 		else {
 			NSString *fullURL = [NSString stringWithFormat:@"%@%@", HOME_URL, theNewsItem.thumbnailURL];

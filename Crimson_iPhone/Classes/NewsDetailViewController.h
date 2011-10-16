@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
 #import "YouTubeView.h"
+#import "GADBannerView.h"
 
 @class NewsItem;
 
@@ -23,6 +24,7 @@
 	UIWebView *contentWebView;
 	YouTubeView *youTubeView;
 	NewsItem *theNewsItem;
+    GADBannerView *bannerView_;
 }
 
 @property(nonatomic, retain) IBOutlet UIScrollView *mainScrollView;

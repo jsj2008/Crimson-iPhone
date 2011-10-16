@@ -19,6 +19,7 @@
 		E500A9A713FC2282004A8FD6 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E500A9A613FC2282004A8FD6 /* icon@2x.png */; };
 		E500A9A913FC2391004A8FD6 /* icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = E500A9A813FC2391004A8FD6 /* icon-512.png */; };
 		E50C934B13DD5974005DDE8B /* libobjc.A.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E50C934A13DD5974005DDE8B /* libobjc.A.dylib */; };
+		E5253C0F142BF4FF0070EAF5 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5253C0E142BF4FF0070EAF5 /* libGoogleAdMobAds.a */; };
 		E525ABA513D9D52E00203B4C /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525ABA313D9D52E00203B4C /* NewsDetailViewController.m */; };
 		E525ABA613D9D52E00203B4C /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E525ABA413D9D52E00203B4C /* NewsDetailViewController.xib */; };
 		E525ABCA13D9D72C00203B4C /* FeedListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E525ABC813D9D72C00203B4C /* FeedListViewController.m */; };
@@ -51,6 +52,7 @@
 		E5635D6D13DC35E7000DC94D /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D6C13DC35E7000DC94D /* GTMNSString+HTML.m */; };
 		E5635D7213DC383D000DC94D /* NSDate+RelativeDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E5635D7113DC383D000DC94D /* NSDate+RelativeDate.m */; };
 		E5646D5E13E17EA0005EF444 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5646D5D13E17EA0005EF444 /* libFlurry.a */; };
+		E56791F1142C15430032E0E0 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = E56791F0142C15430032E0E0 /* Entitlements.plist */; };
 		E57C8D3513DD83BE00B9D0DB /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C8D3413DD83BE00B9D0DB /* BaseModel.m */; };
 		E57C8D3813DD83F200B9D0DB /* NSObjectAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C8D3713DD83F200B9D0DB /* NSObjectAdditions.m */; };
 		E5847F7413DC9DC300772AF3 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5847F7313DC9DC300772AF3 /* MessageUI.framework */; };
@@ -165,6 +167,13 @@
 		E500A9A613FC2282004A8FD6 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		E500A9A813FC2391004A8FD6 /* icon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-512.png"; sourceTree = "<group>"; };
 		E50C934A13DD5974005DDE8B /* libobjc.A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libobjc.A.dylib; path = usr/lib/libobjc.A.dylib; sourceTree = SDKROOT; };
+		E5253C08142BF4FF0070EAF5 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
+		E5253C09142BF4FF0070EAF5 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		E5253C0A142BF4FF0070EAF5 /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
+		E5253C0B142BF4FF0070EAF5 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		E5253C0C142BF4FF0070EAF5 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
+		E5253C0D142BF4FF0070EAF5 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
+		E5253C0E142BF4FF0070EAF5 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		E525ABA213D9D52E00203B4C /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		E525ABA313D9D52E00203B4C /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		E525ABA413D9D52E00203B4C /* NewsDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = NewsDetailViewController.xib; path = Classes/NewsDetailViewController.xib; sourceTree = "<group>"; };
@@ -227,6 +236,7 @@
 		E5646D5B13E17EA0005EF444 /* FlurryOffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryOffer.h; sourceTree = "<group>"; };
 		E5646D5C13E17EA0005EF444 /* FlurryAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlurryAPI.h; sourceTree = "<group>"; };
 		E5646D5D13E17EA0005EF444 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
+		E56791F0142C15430032E0E0 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E57C8D3313DD83BE00B9D0DB /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		E57C8D3413DD83BE00B9D0DB /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		E57C8D3613DD83F200B9D0DB /* NSObjectAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSObjectAdditions.h; sourceTree = "<group>"; };
@@ -401,7 +411,6 @@
 		E5D0C93B13FE33F500E3EAC4 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		E5D0C94213FE340A00E3EAC4 /* SHKFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHKFacebook.h; sourceTree = "<group>"; };
 		E5D0C94313FE340A00E3EAC4 /* SHKFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHKFacebook.m; sourceTree = "<group>"; };
-		E5D0C98613FE3C5200E3EAC4 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		E5D255CA1427848400655334 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		E5D255CC1427848B00655334 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E5D255CE1427849900655334 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -435,6 +444,7 @@
 				E53BA2E013DE1B080098761C /* libxml2.dylib in Frameworks */,
 				E586338813DF21F700EB552C /* Security.framework in Frameworks */,
 				E5646D5E13E17EA0005EF444 /* libFlurry.a in Frameworks */,
+				E5253C0F142BF4FF0070EAF5 /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,12 +474,12 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				E56791F0142C15430032E0E0 /* Entitlements.plist */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				E5D0C98613FE3C5200E3EAC4 /* Entitlements.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -538,6 +548,20 @@
 				E55B7DF713FB82C800AED455 /* Default.png */,
 			);
 			name = "Splash Images";
+			sourceTree = "<group>";
+		};
+		E5253C06142BF4E70070EAF5 /* AdMob */ = {
+			isa = PBXGroup;
+			children = (
+				E5253C08142BF4FF0070EAF5 /* GADBannerView.h */,
+				E5253C09142BF4FF0070EAF5 /* GADBannerViewDelegate.h */,
+				E5253C0A142BF4FF0070EAF5 /* GADInterstitial.h */,
+				E5253C0B142BF4FF0070EAF5 /* GADInterstitialDelegate.h */,
+				E5253C0C142BF4FF0070EAF5 /* GADRequest.h */,
+				E5253C0D142BF4FF0070EAF5 /* GADRequestError.h */,
+				E5253C0E142BF4FF0070EAF5 /* libGoogleAdMobAds.a */,
+			);
+			name = AdMob;
 			sourceTree = "<group>";
 		};
 		E525AB8813D9D39600203B4C /* App Classes */ = {
@@ -643,6 +667,7 @@
 		E556582413DB17E600479193 /* Support Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E5253C06142BF4E70070EAF5 /* AdMob */,
 				E5646D5713E17EA0005EF444 /* FlurryLib */,
 				E586369113DF637500EB552C /* Social Media */,
 				E53BA2C813DE1A780098761C /* HTML Parsing */,
@@ -1217,6 +1242,7 @@
 				E54239C01426722C00BD3A55 /* searchfilter_panel@2x.png in Resources */,
 				E5B7695A142694D40061C034 /* arrow.png in Resources */,
 				E5B7695B142694D40061C034 /* arrow@2x.png in Resources */,
+				E56791F1142C15430032E0E0 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,6 +1368,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
+					"\"$(SRCROOT)/Classes\"",
 				);
 				PRODUCT_NAME = "The Crimson";
 				SDKROOT = iphoneos;
@@ -1353,7 +1380,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/Crimson-iPhone/Crimson_iPhone/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sophie Chang (KCV7726YB7)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Crimson_iPhone_Prefix.pch;
@@ -1361,6 +1389,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
+					"\"$(SRCROOT)/Classes\"",
 				);
 				PRODUCT_NAME = "The Crimson";
 				SDKROOT = iphoneos;
@@ -1372,7 +1401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sophie Chang (KCV7726YB7)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1380,6 +1409,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3B1F49D4-3E5B-43EC-A83A-2DF2EBA048F4";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1388,7 +1418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sophie Chang (KCV7726YB7)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1397,6 +1427,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3B1F49D4-3E5B-43EC-A83A-2DF2EBA048F4";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -1405,7 +1436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: The Harvard Crimson, Inc.";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1414,6 +1445,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F7E666B4-9D5A-460A-88FB-267B7871A057";
 				SDKROOT = iphoneos;
 			};
 			name = Distribution;
@@ -1430,9 +1462,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
+					"\"$(SRCROOT)/Classes\"",
 				);
 				PRODUCT_NAME = "The Crimson";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9DE93B52-F642-4A18-81E6-8A8C0A314CA2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1442,7 +1474,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = "~/Crimson-iPhone/Crimson_iPhone/Entitlements.plist";
+				"CODE_SIGN_ENTITLEMENTS[sdk=*]" = "~/Crimson-iPhone/Crimson_iPhone/Entitlements.plist";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: The Harvard Crimson, Inc.";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1451,6 +1485,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A91C13BE-D932-4ADF-82AE-BC607774BD7C";
 				SDKROOT = iphoneos;
 			};
 			name = "Ad Hoc";
@@ -1468,9 +1503,9 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Classes/FlurryLib\"",
+					"\"$(SRCROOT)/Classes\"",
 				);
 				PRODUCT_NAME = "The Crimson";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "3854D97E-2FE7-44EE-B8EE-7E1441A78DC0";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

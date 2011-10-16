@@ -9,3 +9,4 @@
 #define HOME_URL @"http://www.thecrimson.com"
 #define YOUTUBE_URL @"http://www.youtube.com"
 #define FEED_BASE_URL [NSString stringWithFormat:@"%@/feeds/section/", HOME_URL]
+#define MEDIA_URL [NSString stringWithFormat:@"%@/media/", HOME_URL]
